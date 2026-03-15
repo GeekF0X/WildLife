@@ -12,7 +12,12 @@ public class RobotManager : MonoBehaviour
 
     private void Start()
     {
-        controlledRobot = small;    
+        controlledRobot = small;
+        small.isEnergized = true;
+        small.cineCamera.enabled = true;
+
+        big.isEnergized = false;
+        big.cineCamera.enabled = false;
     }
 
     public void OnChange(InputAction.CallbackContext context)
