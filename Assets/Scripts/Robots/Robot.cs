@@ -41,13 +41,8 @@ public abstract class Robot : MonoBehaviour
             forward.y = 0;
             forward.Normalize();
 
-            Vector3 right = camera.right;
-            right.y = 0;
-            right.Normalize();
-
-            Vector3 moveVector = (forward * moveDirection.z + right * moveDirection.x) * Time.deltaTime * speed;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
             controller.Move(moveVector);
-
 
             transform.rotation = Quaternion.LookRotation(forward);
 
