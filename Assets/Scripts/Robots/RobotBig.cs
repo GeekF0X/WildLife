@@ -3,12 +3,19 @@ using UnityEngine.InputSystem;
 
 public class RobotBig:Robot
 {
-    protected override void TakeAction()
+    float maxDistance = 1.4f;
+    public override void TakeAction()
     {
-        Debug.Log("Carregar!");
+        Ray rayTarget = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        rayTarget.origin = transform.position;
+        Debug.DrawRay(rayTarget.origin, rayTarget.direction * maxDistance, Color.red, 5);
+        if (Physics.Raycast(rayTarget, out RaycastHit hit, maxDistance))
+        {
+            Debug.Log("Acertou: " + hit.collider.name);
+        }
     }
 
-    protected override void CancelAction()
+    public override void CancelAction()
     {
         throw new System.NotImplementedException();
     }

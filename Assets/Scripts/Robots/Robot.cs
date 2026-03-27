@@ -58,6 +58,6 @@ public abstract class Robot : MonoBehaviour
     }
 
 
-    protected abstract void TakeAction();
-    protected abstract void CancelAction();
+    public abstract void TakeAction();
+    public abstract void CancelAction();
 }

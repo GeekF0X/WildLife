@@ -35,4 +35,10 @@ public class RobotManager : MonoBehaviour
     {
         controlledRobot.Move(context.ReadValue<Vector2>());
     }
+
+    public void OnTakeAction(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            controlledRobot.TakeAction();
+    }
 }
