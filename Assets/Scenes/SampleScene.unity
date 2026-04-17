@@ -1787,9 +1787,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1222292312052874351, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: pullForce
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4788086561738391827, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_Name
       value: Robot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616552493517062553, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LinearDamping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7583665259408787418, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_Camera
