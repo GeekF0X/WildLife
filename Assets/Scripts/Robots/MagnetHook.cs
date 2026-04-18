@@ -15,6 +15,7 @@ public class MagnetHook : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         hit = true;
+        GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         if (collision.gameObject.tag == "Hookable" && hookControl.spring == 0)
         {
             gameObject.AddComponent<FixedJoint>();
@@ -27,13 +28,13 @@ public class MagnetHook : MonoBehaviour
             {
                 pullself = false;
                 hookControl.spring = pullForce;
-                hookControl.maxDistance = 0.1f;
+                hookControl.maxDistance = 0.01f;
             }
         }
         else
         {
             hookControl.spring = pullForce*3;
-            hookControl.maxDistance = 0.1f;
+            hookControl.maxDistance = 0.01f;
         }
     }
 
@@ -48,12 +49,16 @@ public class MagnetHook : MonoBehaviour
     {
         if(hasHooked())
         {
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            
             if (GetComponent<FixedJoint>().connectedBody)
                 GetComponent<FixedJoint>().connectedBody.linearVelocity = Vector3.zero;
             Destroy(GetComponent<FixedJoint>());
         }
         if (hookControl.spring == 0)
         {
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+
             hookControl.spring = pullForce * 3;
             hookControl.maxDistance = 0.1f;
         }

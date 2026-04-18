@@ -22,7 +22,7 @@ public class RobotSmall:Robot
     
 
     Vector3 magnetStart;
-    Vector3 target;
+    Vector3 directionMagnet;
     Vector3 directionFall;
     float selfGravity;
     private void Start()
@@ -42,7 +42,7 @@ public class RobotSmall:Robot
 
         if (Physics.Raycast(rayTarget, out RaycastHit hit, magnet.maxDistance))
         {
-            target = hit.point;
+            directionMagnet = (hit.point - magnet.gameObject.transform.position).normalized;
             magnet.ShootMagnet();
             currentState = State.Shooting;
         }
@@ -50,16 +50,15 @@ public class RobotSmall:Robot
 
     void Shoot()
     {
-        Vector3 direction = (target - magnet.gameObject.transform.position).normalized;
-
-        magnet.gameObject.GetComponent<Rigidbody>().linearVelocity = direction * magnet.magnetSpeed;
+        isEnergized = false;
+        magnet.gameObject.GetComponent<Rigidbody>().linearVelocity = directionMagnet * magnet.magnetSpeed;
 
         float distanceToPlayer = Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart);
         if (magnet.hasHooked())
         {
             currentState = State.PullObject;
         }
-        else if (distanceToPlayer >= Vector3.Distance(target, magnetStart) || magnet.hit)
+        else if (distanceToPlayer > magnet.maxDistance || magnet.hit)
         {
             currentState = State.Retracting;
         }
@@ -96,6 +95,7 @@ public class RobotSmall:Robot
     void InertialMove()
     {
         gravity = selfGravity;
+        magnet.ReleaseHooked();
         if (!controller.isGrounded)
         {
             Vector3 move = directionFall * magnet.playerPullSpeed * Time.deltaTime;
@@ -103,6 +103,7 @@ public class RobotSmall:Robot
         }
         else
         {
+            isEnergized = true;
             currentState = State.Idle;
         }
     }
@@ -111,15 +112,18 @@ public class RobotSmall:Robot
     {
         gravity = selfGravity;
         magnet.ReleaseHooked();
-        if (Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart) < 0.1f)
+        Debug.Log(Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart));
+        if (Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart) < 0.23f)
         {
+            isEnergized = true;
+            magnet.transform.localPosition = magnetStart;
             currentState = State.Idle;
         }
     }
 
     public override void TakeAction()
     {
-        if(currentState == State.Idle || currentState == State.Retracting)
+        if(currentState == State.Idle)
         {
             SearchTarget();
         }
