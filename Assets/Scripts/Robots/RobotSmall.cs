@@ -112,7 +112,6 @@ public class RobotSmall:Robot
     {
         gravity = selfGravity;
         magnet.ReleaseHooked();
-        Debug.Log(Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart));
         if (Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart) < 0.23f)
         {
             isEnergized = true;
