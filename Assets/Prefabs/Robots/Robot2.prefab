@@ -441,9 +441,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 0
+  m_Height: 1.542036
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.27101803, z: 0}
 --- !u!1 &3802827315340530726
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +569,8 @@ MonoBehaviour:
   controller: {fileID: 4607656032139519114}
   isEnergized: 0
   speed: 5
+  gravity: -8
+  fall: 0
   other: {fileID: 0}
   cineCamera: {fileID: 637913553550606410}
 --- !u!143 &4607656032139519114
