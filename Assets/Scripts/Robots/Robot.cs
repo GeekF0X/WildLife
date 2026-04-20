@@ -65,7 +65,28 @@ public abstract class Robot : MonoBehaviour
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
+    public void run()
+    {
+        if (isEnergized)
+        {
+            speed += 3f;
+        }
+    }
+    public void dash()
+    {
+        if (isEnergized)
+        {
+            Transform camera = Camera.main.transform;
 
+            Vector3 forward = camera.forward;
+            forward.y = 0;
+            forward.Normalize();
+
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
+
+            controller.Move(moveVector*20f);
+        }
+    }
 
     public abstract void TakeAction();
     public abstract void CancelAction();

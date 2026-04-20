@@ -47,4 +47,12 @@ public class RobotManager : MonoBehaviour
         //if (context.performed)
             controlledRobot.CancelAction();
     }
+    public void run(InputAction.CallbackContext context)
+    {
+        controlledRobot.run();
+    }
+    public void dash(InputAction.CallbackContext context)
+    {
+        controlledRobot.dash();
+    }
 }
