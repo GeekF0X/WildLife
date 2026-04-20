@@ -5953,14 +5953,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controles
       objectReference: {fileID: 0}
-    - target: {fileID: 2404102942673617265, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.4999847
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455166672889811170, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1.0000153
-      objectReference: {fileID: 0}
     - target: {fileID: 4913229962794820590, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6040,18 +6032,6 @@ PrefabInstance:
     - target: {fileID: 4913229962794820590, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381604881615860014, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.4999847
-      objectReference: {fileID: 0}
-    - target: {fileID: 8725905645895835896, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.5000458
-      objectReference: {fileID: 0}
-    - target: {fileID: 8725905645895835896, guid: cd7510f224925c847bd09a3af6c1d201, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -45.999996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
