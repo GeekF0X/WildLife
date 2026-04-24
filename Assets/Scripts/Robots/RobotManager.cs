@@ -49,10 +49,20 @@ public class RobotManager : MonoBehaviour
     }
     public void run(InputAction.CallbackContext context)
     {
-        controlledRobot.run();
+        if (context.performed)
+        {
+            controlledRobot.run(10f);
+        }
+        else
+        {
+            controlledRobot.run(5f);
+        }
     }
     public void dash(InputAction.CallbackContext context)
     {
-        controlledRobot.dash();
+        if (context.performed)
+        {
+            controlledRobot.dash();
+        }
     }
 }

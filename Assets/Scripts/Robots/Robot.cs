@@ -65,11 +65,11 @@ public abstract class Robot : MonoBehaviour
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
-    public void run()
+    public void run(float r)
     {
         if (isEnergized)
         {
-            speed += 3f;
+            speed = r;
         }
     }
     public void dash()
