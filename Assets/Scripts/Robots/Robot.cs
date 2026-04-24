@@ -50,12 +50,12 @@ public abstract class Robot : MonoBehaviour
 
             transform.rotation = Quaternion.LookRotation(forward);
         }
+        controller.Move(Vector3.up * fall);
+
         if (controller.isGrounded)
             fall = 0;
         else
             fall += gravity * Time.deltaTime;
-
-        controller.Move(Vector3.up * fall);
     }
 
     public void Move(Vector2 input)
