@@ -19,7 +19,6 @@ public abstract class Robot : MonoBehaviour
     public float dist = 1.5f;
     public LayerMask layerMask;
     public bool isClimbing;
-    public bool climbPressed;
 
     public void Change()
     {
@@ -56,19 +55,24 @@ public abstract class Robot : MonoBehaviour
 
             transform.rotation = Quaternion.LookRotation(forward);
 
-        if (controller.isGrounded)
+        if (controller.isGrounded || isClimbing)
             fall = 0;
         else
             fall += gravity * Time.deltaTime;
 
         controller.Move(Vector3.up * fall);
 
-        Climb();
         if (isClimbing)
         {
-            Vector3 move = transform.up * moveDirection.y * climbSpeed;
-            controller.Move(move * Time.deltaTime);
+            RaycastHit hit;
+
+            if (! Physics.Raycast((transform.position - Vector3.up * 0.65f), transform.forward, out hit, dist, layerMask))
+            {
+                isClimbing = false;
+            }
+            controller.Move(Vector3.up * climbSpeed * Time.deltaTime);
         }
+
         }
         
     }
@@ -106,7 +110,7 @@ public abstract class Robot : MonoBehaviour
     public abstract void TakeAction();
     public abstract void CancelAction();
 
-    public void Climb()
+    public void Climb(bool climbPressed)
     {
         if (isEnergized)
         {
@@ -114,10 +118,11 @@ public abstract class Robot : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, dist, layerMask))
             {
-                if (climbPressed)
-                {
-                    isClimbing = true;
-                }
+
+                Debug.Log("Funciona!");
+
+                isClimbing = climbPressed;
+
             } else isClimbing = false;
 
         }

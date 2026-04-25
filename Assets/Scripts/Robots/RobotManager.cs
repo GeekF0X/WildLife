@@ -68,9 +68,6 @@ public class RobotManager : MonoBehaviour
 
     public void OnClimb(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            controlledRobot.Climb();
-        }
+        controlledRobot.Climb(context.performed);
     }
 }
