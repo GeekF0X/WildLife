@@ -38,11 +38,13 @@ public class RobotManager : MonoBehaviour
 
     public void OnTakeAction(InputAction.CallbackContext context)
     {
-        controlledRobot.TakeAction(context);
+        if (context.performed)
+            controlledRobot.TakeAction();
     }
 
     public void OnCancelAction(InputAction.CallbackContext context)
     {
-        controlledRobot.CancelAction(context);
+        //if (context.performed)
+            controlledRobot.CancelAction();
     }
 }

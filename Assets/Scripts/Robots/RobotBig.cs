@@ -50,13 +50,10 @@ public class RobotBig : Robot
         }
     }
 
-    protected override bool ShouldFaceCamera() => currentState != BigState.Aiming;
+    //protected override bool ShouldFaceCamera() => currentState != BigState.Aiming;
 
-    public override void TakeAction(InputAction.CallbackContext context)
+    public override void TakeAction()
     {
-        if (!context.performed) return;
-        if (!isEnergized) return;
-
         switch (currentState)
         {
             case BigState.Idle:    TryPickup();        break;
@@ -65,8 +62,9 @@ public class RobotBig : Robot
         }
     }
 
-    public override void CancelAction(InputAction.CallbackContext context)
+    public override void CancelAction()
     {
+
     }
 
     new private void Update()

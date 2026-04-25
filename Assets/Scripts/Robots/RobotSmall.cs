@@ -19,7 +19,6 @@ public class RobotSmall:Robot
 
     public Transform raycastOffset;
     public MagnetHook magnet;
-    
 
     Vector3 magnetStart;
     Vector3 directionMagnet;
@@ -45,22 +44,36 @@ public class RobotSmall:Robot
             directionMagnet = (hit.point - magnet.gameObject.transform.position).normalized;
             magnet.ShootMagnet();
             currentState = State.Shooting;
+            if(magnet.colliding > 0)
+            {
+                currentState = State.Retracting;
+            }
         }
     }
 
     void Shoot()
     {
         isEnergized = false;
-        magnet.gameObject.GetComponent<Rigidbody>().linearVelocity = directionMagnet * magnet.magnetSpeed;
+
+        magnet.rb.linearVelocity = directionMagnet * magnet.magnetSpeed;
 
         float distanceToPlayer = Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart);
         if (magnet.hasHooked())
         {
             currentState = State.PullObject;
         }
-        else if (distanceToPlayer > magnet.maxDistance || magnet.hit)
+        else
         {
-            currentState = State.Retracting;
+            if (distanceToPlayer > magnet.maxDistance)
+            {
+                currentState = State.Retracting;
+                Debug.Log("longe demais");
+            }
+            if (magnet.hit)
+            {
+                currentState = State.Retracting;
+                Debug.Log("bati");
+            }
         }
     }
 
@@ -79,6 +92,7 @@ public class RobotSmall:Robot
     {
         gravity =  0;
         float distanceToHook = Vector3.Distance(magnetStart, magnet.gameObject.transform.localPosition);
+        magnet.rb.linearVelocity = Vector3.zero;
         if (distanceToHook > 0.8f)
         {
             Vector3 direction = (magnet.gameObject.transform.position - transform.position).normalized;
@@ -115,15 +129,14 @@ public class RobotSmall:Robot
         if (Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart) < 0.23f)
         {
             isEnergized = true;
+            magnet.rb.linearVelocity = Vector3.zero;
             magnet.transform.localPosition = magnetStart;
             currentState = State.Idle;
         }
     }
 
-    public override void TakeAction(InputAction.CallbackContext context)
+    public override void TakeAction()
     {
-        if (!context.performed) return;
-
         if(currentState == State.Idle)
         {
             SearchTarget();
@@ -131,7 +144,7 @@ public class RobotSmall:Robot
 
     }
 
-    public override void CancelAction(InputAction.CallbackContext context)
+    public override void CancelAction()
     {
         if (currentState == State.PullSelf)
         {
@@ -140,7 +153,7 @@ public class RobotSmall:Robot
         }
         else if(currentState != State.Inertial)
         {
-            Debug.Log("ï¿½ pra soltar");
+            Debug.Log("é pra soltar");
             currentState = State.Retracting;
         }
     }
@@ -169,7 +182,7 @@ public class RobotSmall:Robot
             case State.Idle:
                 break;
             default:
-                CancelAction(default);
+                CancelAction();
                 break;
         }
 
