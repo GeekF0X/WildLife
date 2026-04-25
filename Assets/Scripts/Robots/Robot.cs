@@ -55,26 +55,24 @@ public abstract class Robot : MonoBehaviour
 
             transform.rotation = Quaternion.LookRotation(forward);
 
-        if (controller.isGrounded || isClimbing)
+            if (isClimbing)
+            {
+                RaycastHit hit;
+
+                if (! Physics.Raycast((transform.position - Vector3.up * 0.65f), transform.forward, out hit, dist, layerMask))
+                {
+                    isClimbing = false;
+                }
+                controller.Move(Vector3.up * climbSpeed * Time.deltaTime);
+            }
+       
+        }
+        controller.Move(Vector3.up * fall);
+
+        if (controller.isGrounded)
             fall = 0;
         else
             fall += gravity * Time.deltaTime;
-
-        controller.Move(Vector3.up * fall);
-
-        if (isClimbing)
-        {
-            RaycastHit hit;
-
-            if (! Physics.Raycast((transform.position - Vector3.up * 0.65f), transform.forward, out hit, dist, layerMask))
-            {
-                isClimbing = false;
-            }
-            controller.Move(Vector3.up * climbSpeed * Time.deltaTime);
-        }
-
-        }
-        
     }
 
     public void Move(Vector2 input)
