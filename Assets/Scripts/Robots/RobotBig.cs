@@ -84,13 +84,13 @@ public class RobotBig : Robot
 
         if (currentState == BigState.Aiming)
         {
-            AimingMovement();
+            //AimingMovement();
             UpdateAim();
         }
-        else
-        {
-            base.Update();
-        }
+        //else
+       // {
+       // }
+        base.Update();
     }
 
     private void AimingMovement()
@@ -161,7 +161,7 @@ public class RobotBig : Robot
     {
         Vector2 mouseDelta = Mouse.current != null ? Mouse.current.delta.ReadValue() : Vector2.zero;
 
-        transform.Rotate(0f, mouseDelta.x * aimSensitivity * 0.1f, 0f);
+        //transform.Rotate(0f, mouseDelta.x * aimSensitivity * 0.1f, 0f);
 
         currentPitch -= mouseDelta.y * aimSensitivity * 0.1f;
         currentPitch = Mathf.Clamp(currentPitch, -maxPitch, maxPitch);

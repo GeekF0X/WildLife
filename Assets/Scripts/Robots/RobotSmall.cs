@@ -80,7 +80,7 @@ public class RobotSmall:Robot
     void PullObject()
     {
         float distanceToPlayer = Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart);
-        if (magnet.hasHooked()) { }
+        if (magnet.hasHooked())
             if (magnet.pullself)
                 currentState = State.PullSelf;
 

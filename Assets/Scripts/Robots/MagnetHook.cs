@@ -4,7 +4,7 @@ public class MagnetHook : MonoBehaviour
 {
     public SpringJoint hookControl;
     public float pullForce = 100f;
-    public float maxPullableMass = 49f;
+    public float maxPullableMass = 10f;
     public float magnetSpeed = 14f;
     public float playerPullSpeed = 12f;
     public float maxDistance = 10f;
@@ -26,7 +26,6 @@ public class MagnetHook : MonoBehaviour
         colliding++;
         hit = true;
         GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Hookable" && hookControl.spring == 0)
         {
             gameObject.AddComponent<FixedJoint>();
@@ -37,6 +36,7 @@ public class MagnetHook : MonoBehaviour
             }
             else
             {
+                Debug.Log(collision.rigidbody.mass > maxPullableMass);
                 pullself = false;
                 hookControl.spring = pullForce;
                 hookControl.maxDistance = 0.001f;
