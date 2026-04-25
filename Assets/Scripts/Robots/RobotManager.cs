@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class RobotManager : MonoBehaviour
 {
-    public enum RobotType { SMALL, BIG}
+    public enum RobotType {SMALL, BIG}
     public Robot small;
     public Robot big;
 
@@ -63,6 +63,14 @@ public class RobotManager : MonoBehaviour
         if (context.performed)
         {
             controlledRobot.dash();
+        }
+    }
+
+    public void OnClimb(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            controlledRobot.Climb();
         }
     }
 }

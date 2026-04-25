@@ -15,6 +15,12 @@ public abstract class Robot : MonoBehaviour
     public CinemachineCamera cineCamera;
     Transform lastCameraLook = null;
 
+    public int climbSpeed = 3;
+    public float dist = 1.5f;
+    public LayerMask layerMask;
+    public bool isClimbing;
+    public bool climbPressed;
+
     public void Change()
     {
         lastCameraLook = cineCamera.transform;
@@ -49,13 +55,22 @@ public abstract class Robot : MonoBehaviour
             controller.Move(moveVector);
 
             transform.rotation = Quaternion.LookRotation(forward);
-        }
+
         if (controller.isGrounded)
             fall = 0;
         else
             fall += gravity * Time.deltaTime;
 
         controller.Move(Vector3.up * fall);
+
+        Climb();
+        if (isClimbing)
+        {
+            Vector3 move = transform.up * moveDirection.y * climbSpeed;
+            controller.Move(move * Time.deltaTime);
+        }
+        }
+        
     }
 
     public void Move(Vector2 input)
@@ -90,4 +105,21 @@ public abstract class Robot : MonoBehaviour
 
     public abstract void TakeAction();
     public abstract void CancelAction();
+
+    public void Climb()
+    {
+        if (isEnergized)
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, dist, layerMask))
+            {
+                if (climbPressed)
+                {
+                    isClimbing = true;
+                }
+            } else isClimbing = false;
+
+        }
+    }
 }
