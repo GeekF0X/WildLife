@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Unity.Cinemachine.CinemachineImpulseManager.ImpulseEvent;
 
 public abstract class Robot : MonoBehaviour
@@ -34,30 +35,33 @@ public abstract class Robot : MonoBehaviour
         other.isEnergized = true;
     }
 
+    protected virtual bool ShouldFaceCamera() => true;
+
     protected void Update()
+{
+    if (isEnergized)
     {
-        if (isEnergized)
-        {
-            Transform camera = Camera.main.transform;
+        Transform camera = Camera.main.transform;
 
-            Vector3 forward = camera.forward;
-            forward.y = 0;
-            forward.Normalize();
+        Vector3 forward = camera.forward;
+        forward.y = 0;
+        forward.Normalize();
 
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
+        Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
 
-            controller.Move(moveVector);
+        controller.Move(moveVector);
 
+        // Só rotaciona se houver input de movimento E o estado permitir
+        if (ShouldFaceCamera() && moveDirection.sqrMagnitude > 0.01f)
             transform.rotation = Quaternion.LookRotation(forward);
-        }
-        controller.Move(Vector3.up * fall);
-
-        if (controller.isGrounded)
-            fall = 0;
-        else
-            fall += gravity * Time.deltaTime;
     }
+    if (controller.isGrounded)
+        fall = 0;
+    else
+        fall += gravity * Time.deltaTime;
 
+    controller.Move(Vector3.up * fall);
+}
     public void Move(Vector2 input)
     {
         if (isEnergized)
@@ -67,6 +71,6 @@ public abstract class Robot : MonoBehaviour
     }
 
 
-    public abstract void TakeAction();
-    public abstract void CancelAction();
+    public abstract void TakeAction(InputAction.CallbackContext context);
+    public abstract void CancelAction(InputAction.CallbackContext context);
 }

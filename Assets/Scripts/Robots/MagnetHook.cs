@@ -11,22 +11,11 @@ public class MagnetHook : MonoBehaviour
 
     public bool pullself = false;
     public bool hit = false;
-
-    public Rigidbody rb;
-
-    public int colliding = 0;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
-        colliding++;
         hit = true;
         GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Hookable" && hookControl.spring == 0)
         {
             gameObject.AddComponent<FixedJoint>();
@@ -39,20 +28,14 @@ public class MagnetHook : MonoBehaviour
             {
                 pullself = false;
                 hookControl.spring = pullForce;
-                hookControl.maxDistance = 0.001f;
+                hookControl.maxDistance = 0.01f;
             }
         }
         else
         {
-            hookControl.spring = pullForce/7;
-            hookControl.maxDistance = 0.001f;
+            hookControl.spring = pullForce*3;
+            hookControl.maxDistance = 0.01f;
         }
-    }
-
-
-    private void OnCollisionExit(Collision collision)
-    {
-        colliding--;
     }
 
     public void ShootMagnet()
@@ -66,7 +49,7 @@ public class MagnetHook : MonoBehaviour
     {
         if(hasHooked())
         {
-            rb.linearVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             
             if (GetComponent<FixedJoint>().connectedBody)
                 GetComponent<FixedJoint>().connectedBody.linearVelocity = Vector3.zero;
@@ -74,10 +57,10 @@ public class MagnetHook : MonoBehaviour
         }
         if (hookControl.spring == 0)
         {
-            rb.linearVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
-            hookControl.spring = pullForce/7;
-            hookControl.maxDistance = 0.001f;
+            hookControl.spring = pullForce * 3;
+            hookControl.maxDistance = 0.1f;
         }
     }
 
