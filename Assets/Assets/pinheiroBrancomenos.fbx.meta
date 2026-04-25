@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 515f5a34ea0fef74580f57d6dd5f0705
+guid: 8214cd92b3c1e0f4c834533f76be3a02
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,18 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: folhas
-    second: {fileID: 2100000, guid: 05985da6e43ebd7409982407c2ed04f5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: madeira
-    second: {fileID: 2100000, guid: 46e612b78e5c0c347a6827e52b51b1d4, type: 2}
+    second: {fileID: 2100000, guid: 691e872fee075204cb73ad1f0a201499, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: pinheirobrancomadeiraarvoremenor
-    second: {fileID: 2800000, guid: 36bc837a6e580484da25685a173245ff, type: 3}
+    second: {fileID: 2800000, guid: 8b12ae346ef3c2045bffd1a9a571ed5a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
