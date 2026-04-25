@@ -43,45 +43,76 @@ public abstract class Robot : MonoBehaviour
     {
         if (isEnergized)
         {
-            Transform camera = Camera.main.transform;
-
-            Vector3 forward = camera.forward;
-            forward.y = 0;
-            forward.Normalize();
-
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
-
-            controller.Move(moveVector);
-
-            transform.rotation = Quaternion.LookRotation(forward);
+            Move();
 
             if (isClimbing)
             {
-                RaycastHit hit;
-
-                if (! Physics.Raycast((transform.position - Vector3.up * 0.65f), transform.forward, out hit, dist, layerMask))
-                {
-                    isClimbing = false;
-                }
-                controller.Move(Vector3.up * climbSpeed * Time.deltaTime);
+                Climb();
             }
        
         }
-        controller.Move(Vector3.up * fall);
-
-        if (controller.isGrounded)
-            fall = 0;
-        else
-            fall += gravity * Time.deltaTime;
+        Fall();
     }
 
-    public void Move(Vector2 input)
+    public void MoveInput(Vector2 input)
     {
         if (isEnergized)
         {
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
+    void Move()
+    {
+        Transform camera = Camera.main.transform;
+
+        Vector3 forward = camera.forward;
+        forward.y = 0;
+        forward.Normalize();
+
+        Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
+
+        controller.Move(moveVector);
+
+        transform.rotation = Quaternion.LookRotation(forward);
+    }
+    void Fall()
+    {
+        controller.Move(Vector3.up * fall);
+
+        if (controller.isGrounded || isClimbing)
+            fall = 0;
+        else
+            fall += gravity * Time.deltaTime;
+    }
+
+    public void ClimbInput(bool climbPressed)
+    {
+        if (isEnergized)
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, dist, layerMask))
+            {
+
+                Debug.Log("Funciona!");
+
+                isClimbing = climbPressed;
+
+            } else isClimbing = false;
+
+        }
+    }
+    void Climb()
+    {
+        RaycastHit hit;
+
+        if (!Physics.Raycast((transform.position - Vector3.up * 0.65f), transform.forward, out hit, dist, layerMask))
+        {
+            isClimbing = false;
+        }
+        controller.Move(Vector3.up * climbSpeed * Time.deltaTime);
+    }
+
     public void run(float r)
     {
         if (isEnergized)
@@ -108,21 +139,4 @@ public abstract class Robot : MonoBehaviour
     public abstract void TakeAction();
     public abstract void CancelAction();
 
-    public void Climb(bool climbPressed)
-    {
-        if (isEnergized)
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, dist, layerMask))
-            {
-
-                Debug.Log("Funciona!");
-
-                isClimbing = climbPressed;
-
-            } else isClimbing = false;
-
-        }
-    }
 }

@@ -33,7 +33,7 @@ public class RobotManager : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        controlledRobot.Move(context.ReadValue<Vector2>());
+        controlledRobot.MoveInput(context.ReadValue<Vector2>());
     }
 
     public void OnTakeAction(InputAction.CallbackContext context)
@@ -68,6 +68,6 @@ public class RobotManager : MonoBehaviour
 
     public void OnClimb(InputAction.CallbackContext context)
     {
-        controlledRobot.Climb(context.performed);
+        controlledRobot.ClimbInput(context.performed);
     }
 }

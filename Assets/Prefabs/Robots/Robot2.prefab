@@ -341,10 +341,16 @@ MonoBehaviour:
   controller: {fileID: 4607656032139519114}
   isEnergized: 0
   speed: 5
-  gravity: -8
+  gravity: -0.3
   fall: 0
   other: {fileID: 0}
   cineCamera: {fileID: 637913553550606410}
+  climbSpeed: 3
+  dist: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  isClimbing: 0
 --- !u!143 &4607656032139519114
 CharacterController:
   m_ObjectHideFlags: 0
