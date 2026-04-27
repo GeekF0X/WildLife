@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.381, y: 0.65800005}
-  m_AnchorMax: {x: 0.9781788, y: 0.78700006}
-  m_AnchoredPosition: {x: 1.2561646, y: 0.42337036}
-  m_SizeDelta: {x: 2.4657593, y: -3.5360336}
+  m_AnchorMin: {x: 0.38321078, y: 0.7106903}
+  m_AnchorMax: {x: 0.9803896, y: 0.8312389}
+  m_AnchoredPosition: {x: 0.97454834, y: -1.3359833}
+  m_SizeDelta: {x: 2.4657593, y: 2.4639664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &205243643805127454
 CanvasRenderer:
@@ -120,10 +120,10 @@ RectTransform:
   - {fileID: 7668792976947735192}
   m_Father: {fileID: 4913229962794820590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.76400006, y: 0.554}
+  m_AnchorMin: {x: 0.76152086, y: 0.45122224}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.27490234, y: -0.47070312}
-  m_SizeDelta: {x: -0.54979706, y: 0.9413986}
+  m_AnchoredPosition: {x: 2.7749023, y: 0.53230286}
+  m_SizeDelta: {x: -5.5498, y: -1.0645981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5600739207131230185
 CanvasRenderer:
@@ -311,10 +311,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06361595, y: 0.39900002}
-  m_AnchorMax: {x: 0.3501522, y: 0.6206618}
-  m_AnchoredPosition: {x: 2.4999695, y: 4}
-  m_SizeDelta: {x: -4.729721, y: -5.045929}
+  m_AnchorMin: {x: 0.06361595, y: 0.4813097}
+  m_AnchorMax: {x: 0.3501522, y: 0.7106903}
+  m_AnchoredPosition: {x: 1.9792175, y: 1.0620117}
+  m_SizeDelta: {x: -4.729721, y: -9.045929}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8923967528313403566
 CanvasRenderer:
@@ -392,7 +392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.187, y: 0.8565927}
   m_AnchorMax: {x: 0.8265894, y: 0.97700006}
-  m_AnchoredPosition: {x: 2.2468262, y: 2.7559204}
+  m_AnchoredPosition: {x: 2.2468262, y: 2.75589}
   m_SizeDelta: {x: -3.0026245, y: -5.813259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1405123382475736961
@@ -469,10 +469,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.079, y: 0.68455553}
-  m_AnchorMax: {x: 0.3501522, y: 0.77669793}
-  m_AnchoredPosition: {x: -1, y: -3}
-  m_SizeDelta: {x: 0.27037048, y: -3.0173492}
+  m_AnchorMin: {x: 0.06361595, y: 0.7362389}
+  m_AnchorMax: {x: 0.3501522, y: 0.8312389}
+  m_AnchoredPosition: {x: 2, y: 2}
+  m_SizeDelta: {x: -6.7296295, y: -4.0173492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2575670918964436691
 CanvasRenderer:
@@ -675,16 +675,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3412207958780521602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06361595, y: 0.09534362}
-  m_AnchorMax: {x: 0.3501522, y: 0.18685599}
-  m_AnchoredPosition: {x: 2.9999695, y: 0.5}
-  m_SizeDelta: {x: -5.729721, y: -3.101822}
+  m_AnchorMin: {x: 0.079, y: 0.019000001}
+  m_AnchorMax: {x: 0.3501522, y: 0.12020782}
+  m_AnchoredPosition: {x: 0.5, y: -1}
+  m_SizeDelta: {x: 1.2702789, y: -9.101822}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &313858826838149957
 CanvasRenderer:
@@ -760,10 +760,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41641065, y: 0.25213584}
+  m_AnchorMin: {x: 0.38321078, y: 0.20449589}
   m_AnchorMax: {x: 0.90079474, y: 0.38863993}
-  m_AnchoredPosition: {x: 1.1492691, y: 0.50001526}
-  m_SizeDelta: {x: -3.119995, y: -2.6085968}
+  m_AnchoredPosition: {x: 2.8792953, y: 4.6613007}
+  m_SizeDelta: {x: -6.5806, y: -9.322599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2752422943305007511
 CanvasRenderer:
@@ -806,7 +806,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Retrair Im\xE3\n(rob\xF4 pequeno)"
+  m_Text: "Retrair Im\xE3\n(rob\xF4 pequeno)\nMira (se soltar atira)\n(rob\xF4 grande)"
 --- !u!1 &4304203394617983798
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06361595, y: 0.20449589}
   m_AnchorMax: {x: 0.3501522, y: 0.41764817}
-  m_AnchoredPosition: {x: 2.4999695, y: 1}
+  m_AnchoredPosition: {x: 2.4999695, y: -0.5229492}
   m_SizeDelta: {x: -4.729721, y: -1.045929}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4278988935708015954
@@ -997,10 +997,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41641065, y: 0.12020782}
-  m_AnchorMax: {x: 0.94920534, y: 0.18685599}
-  m_AnchoredPosition: {x: 0.039367676, y: -1}
-  m_SizeDelta: {x: -6.162491, y: -1.1243286}
+  m_AnchorMin: {x: 0.41641065, y: 0.03869315}
+  m_AnchorMax: {x: 0.94920534, y: 0.11000001}
+  m_AnchoredPosition: {x: 1.0393677, y: 2}
+  m_SizeDelta: {x: -6.162491, y: -4.1243286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2099703113140289478
 CanvasRenderer:
@@ -1076,10 +1076,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4521389527299863595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41641065, y: 0.4482149}
-  m_AnchorMax: {x: 0.90079474, y: 0.5875187}
-  m_AnchoredPosition: {x: 1.1492691, y: 3.7382812}
-  m_SizeDelta: {x: -3.119995, y: -3.6085968}
+  m_AnchorMin: {x: 0.43400002, y: 0.5131681}
+  m_AnchorMax: {x: 0.90079474, y: 0.6836195}
+  m_AnchoredPosition: {x: -1.0207596, y: -0.39608765}
+  m_SizeDelta: {x: -8.903702, y: -3.5597992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &907722294160251307
 CanvasRenderer:
@@ -1122,4 +1122,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gancho de Im\xE3\n(rob\xF4 pequeno)"
+  m_Text: "Gancho de Im\xE3\n(rob\xF4 pequeno)\nPega e solta item\n(rob\xF4 grande)"
