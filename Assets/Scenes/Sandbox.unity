@@ -939,6 +939,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fe7bddc2-55b3-4837-a61c-62325f669fa8
     m_ActionName: 'Player/Climb[/Keyboard/l]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 166275136}
+        m_TargetAssemblyTypeName: RobotManager, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8d55ccb6-d3a7-4fce-8c59-aedb8d7a91a2
+    m_ActionName: 'Player/Jump[/Keyboard/v]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -1315,10 +1331,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot1
       objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9954341
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.05020114
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.08108078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.004089018
+      objectReference: {fileID: 0}
     - target: {fileID: 7765910114578575336, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: other
       value: 
       objectReference: {fileID: 2000143072}
+    - target: {fileID: 7765910114578575336, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: gravity
+      value: -9.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8385213310403457690, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3068,6 +3104,10 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 443300994}
+    - target: {fileID: 7633303324277175240, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
+      propertyPath: gravity
+      value: -9.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5878,7 +5918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085127605}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.050200686, y: 0.081183314, z: -0.0040941862, w: 0.99542576}
+  m_LocalRotation: {x: 0.050201137, y: 0.08108078, z: -0.0040890174, w: 0.9954341}
   m_LocalPosition: {x: 0, y: 1.9000001, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

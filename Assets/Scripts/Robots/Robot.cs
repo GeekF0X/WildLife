@@ -20,6 +20,10 @@ public abstract class Robot : MonoBehaviour
     public LayerMask layerMask;
     public bool isClimbing;
 
+    public float jumpForce = 1f;
+    int jumpCount = 0;
+    public int maxJumps = 2;
+
     public void Change()
     {
         lastCameraLook = cineCamera.transform;
@@ -77,12 +81,17 @@ public abstract class Robot : MonoBehaviour
     }
     void Fall()
     {
-        controller.Move(Vector3.up * fall);
+        controller.Move(Vector3.up * fall * Time.deltaTime);
 
         if (controller.isGrounded || isClimbing)
-            fall = 0;
+        {
+            fall = -0.2f; 
+            jumpCount = 0;
+        }
         else
+        {
             fall += gravity * Time.deltaTime;
+        }
     }
 
     public void ClimbInput(bool climbPressed)
@@ -132,7 +141,17 @@ public abstract class Robot : MonoBehaviour
 
             Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
 
-            controller.Move(moveVector*20f);
+            controller.Move(moveVector * 20f);
+        }
+    }
+    public void JumpInput()
+    {
+        if (!isEnergized) return;
+
+        if (jumpCount < maxJumps)
+        {
+            fall = jumpForce; 
+            jumpCount++;
         }
     }
 

@@ -70,4 +70,11 @@ public class RobotManager : MonoBehaviour
     {
         controlledRobot.ClimbInput(context.performed);
     }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            controlledRobot.JumpInput();
+        }
+    }
 }
