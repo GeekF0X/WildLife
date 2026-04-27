@@ -85,7 +85,7 @@ public abstract class Robot : MonoBehaviour
 
         if (controller.isGrounded || isClimbing)
         {
-            fall = -0.2f; 
+            fall = -2.0f; 
             jumpCount = 0;
         }
         else
