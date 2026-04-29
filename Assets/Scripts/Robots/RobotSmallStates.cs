@@ -36,16 +36,13 @@ public class RobotSmallShoot : IStates
         }
         else
         {
-            Debug.Log(distanceToPlayer);
             if (distanceToPlayer > player.magnet.maxDistance - 2)
             {
                 player.ChangeState(new RobotSmallRetract(player));
-                Debug.Log("longe demais");
             }
             if (player.magnet.hit)
             {
                 player.ChangeState(new RobotSmallRetract(player));
-                Debug.Log("bati");
             }
         }
     }
