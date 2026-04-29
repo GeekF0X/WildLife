@@ -761,7 +761,7 @@ MonoBehaviour:
   maxPullableMass: 10
   magnetSpeed: 20
   playerPullSpeed: 11
-  maxDistance: 11
+  maxDistance: 15
   pullself: 0
   hit: 0
   rb: {fileID: 0}

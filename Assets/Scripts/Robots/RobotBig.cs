@@ -80,34 +80,26 @@ public class RobotBig : Robot
 
         if (currentState == BigState.Aiming)
         {
-            //AimingMovement();
             UpdateAim();
         }
-        //else
-       // {
-       // }
         base.Update();
     }
 
-    private void AimingMovement()
+    void AimMove()
     {
-        Vector2 input = Vector2.zero;
-        if (Keyboard.current != null)
+        if (isEnergized)
         {
-            if (Keyboard.current.wKey.isPressed) input.y += 1;
-            if (Keyboard.current.sKey.isPressed) input.y -= 1;
-            if (Keyboard.current.dKey.isPressed) input.x += 1;
-            if (Keyboard.current.aKey.isPressed) input.x -= 1;
+            Transform camera = Camera.main.transform;
+
+            Vector3 forward = camera.forward;
+            forward.y = 0;
+            forward.Normalize();
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed / 3;
+            controller.Move(moveVector);
+
+            transform.rotation = Quaternion.LookRotation(forward);
         }
-
-        Vector3 move = (transform.forward * input.y + transform.right * input.x) * speed * Time.deltaTime;
-        controller.Move(move);
-
-        if (controller.isGrounded) fall = 0;
-        else fall += gravity * Time.deltaTime;
-        controller.Move(Vector3.up * fall);
     }
-
     private void TryPickup()
     {
         if (detectionOrigin == null || holdPoint == null) return;
@@ -135,6 +127,7 @@ public class RobotBig : Robot
     }
     private void EnterAim()
     {
+        Move = AimMove;
         currentState = BigState.Aiming;
         currentPitch = 10f;
 
@@ -149,6 +142,7 @@ public class RobotBig : Robot
 
     private void ExitAim()
     {
+        Move = BaseMove;
         currentState = BigState.Holding;
 
         if (aimCamera != null) aimCamera.gameObject.SetActive(false);

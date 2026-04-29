@@ -2976,10 +2976,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 637913553550606410, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
-      propertyPath: BlendHint
-      value: 32
-      objectReference: {fileID: 0}
     - target: {fileID: 1320661634641792502, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.09

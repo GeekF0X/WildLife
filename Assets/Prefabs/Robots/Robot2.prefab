@@ -548,7 +548,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-  BlendHint: 0
+  BlendHint: 32
 --- !u!114 &4321614042697313321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-  BlendHint: 0
+  BlendHint: 40
 --- !u!114 &3545360302330825690
 MonoBehaviour:
   m_ObjectHideFlags: 0

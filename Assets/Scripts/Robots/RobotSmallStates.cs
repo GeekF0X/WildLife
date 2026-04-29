@@ -36,19 +36,20 @@ public class RobotSmallShoot : IStates
         }
         else
         {
-            if (distanceToPlayer > player.magnet.maxDistance)
+            Debug.Log(distanceToPlayer);
+            if (distanceToPlayer > player.magnet.maxDistance - 2)
             {
                 player.ChangeState(new RobotSmallRetract(player));
-                //Debug.Log("longe demais");
+                Debug.Log("longe demais");
             }
             if (player.magnet.hit)
             {
                 player.ChangeState(new RobotSmallRetract(player));
-                //Debug.Log("bati");
+                Debug.Log("bati");
             }
         }
     }
-    public void Exit() { }
+    public void Exit() { player.magnet.rb.linearVelocity = Vector3.zero; }
 
     void SearchTarget()
     {
