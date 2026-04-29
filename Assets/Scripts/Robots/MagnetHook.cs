@@ -28,6 +28,8 @@ public class MagnetHook : MonoBehaviour
         GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         if (collision.gameObject.tag == "Hookable" && hookControl.spring == 0)
         {
+            if (hasHooked())
+                return;
             gameObject.AddComponent<FixedJoint>();
             GetComponent<FixedJoint>().connectedBody = collision.rigidbody;
             if(collision.rigidbody.mass > maxPullableMass || collision.rigidbody.isKinematic)
@@ -57,14 +59,18 @@ public class MagnetHook : MonoBehaviour
 
     public void ShootMagnet()
     {
+        GetComponent<Collider>().enabled = true;
         hookControl.maxDistance = maxDistance;
         hookControl.spring = 0;
         hit = false;
         pullself = false;
     }
+
     public void ReleaseHooked()
     {
-        if(hasHooked())
+        GetComponent<Collider>().enabled = false;
+        colliding = 0;
+        if (hasHooked())
         {
             rb.linearVelocity = Vector3.zero;
             

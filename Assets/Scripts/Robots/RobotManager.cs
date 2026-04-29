@@ -9,7 +9,7 @@ public class RobotManager : MonoBehaviour
 
     Robot controlledRobot;
     RobotType robot = RobotType.SMALL;
-
+    bool action = false;
     private void Start()
     {
         controlledRobot = small;
@@ -33,18 +33,26 @@ public class RobotManager : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        controlledRobot.Move(context.ReadValue<Vector2>());
+        controlledRobot.MoveInput(context.ReadValue<Vector2>());
     }
 
     public void OnTakeAction(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !action)
+        {
             controlledRobot.TakeAction();
+            action = true;
+        }
+        else if (!context.performed && action)
+        {
+            controlledRobot.CancelAction();
+            action = false;
+        }
+
     }
 
-    public void OnCancelAction(InputAction.CallbackContext context)
+    public void OnAim(InputAction.CallbackContext context)
     {
-        //if (context.performed)
-            controlledRobot.CancelAction();
+        controlledRobot.Aim(context.performed);
     }
 }

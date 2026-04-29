@@ -1,160 +1,97 @@
+using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using static UnityEngine.UI.Image;
 
 public class RobotSmall:Robot
 {
-    public enum State
-    {
-        Idle,
-        Shooting,
-        Retracting,
-        PullObject,
-        PullSelf,
-        Inertial
-    }
-    public State currentState = State.Idle;
+    IStates state;
 
-
+    public CinemachineCamera aimCamera;
     public Transform raycastOffset;
     public MagnetHook magnet;
 
-    Vector3 magnetStart;
-    Vector3 directionMagnet;
-    Vector3 directionFall;
-    float selfGravity;
-    private void Start()
+    public Vector3 magnetStart;
+    
+    public Vector3 directionFall;
+    public float selfGravity;
+    private new void Start()
     {
+        base.Start();
+        aimCamera.gameObject.SetActive(false);
+        ChangeState(new RobotSmallIdle(this));
         selfGravity = gravity;
         magnetStart = magnet.gameObject.transform.localPosition;
     }
 
-    void SearchTarget()
+    public void ChangeState(IStates state)
     {
-        Ray rayTarget = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-
-        Vector3 vectorOffset = raycastOffset.position - rayTarget.origin;
-
-        float offset = Vector3.Dot(vectorOffset, rayTarget.direction);
-        rayTarget.origin = rayTarget.origin + (Camera.main.transform.forward * offset);
-
-        if (Physics.Raycast(rayTarget, out RaycastHit hit, magnet.maxDistance))
-        {
-            directionMagnet = (hit.point - magnet.gameObject.transform.position).normalized;
-            magnet.ShootMagnet();
-            currentState = State.Shooting;
-            if(magnet.colliding > 0)
-            {
-                currentState = State.Retracting;
-            }
-        }
-    }
-
-    void Shoot()
-    {
-        isEnergized = false;
-
-        magnet.rb.linearVelocity = directionMagnet * magnet.magnetSpeed;
-
-        float distanceToPlayer = Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart);
-        if (magnet.hasHooked())
-        {
-            currentState = State.PullObject;
-        }
-        else
-        {
-            if (distanceToPlayer > magnet.maxDistance)
-            {
-                currentState = State.Retracting;
-                Debug.Log("longe demais");
-            }
-            if (magnet.hit)
-            {
-                currentState = State.Retracting;
-                Debug.Log("bati");
-            }
-        }
-    }
-
-    void PullObject()
-    {
-        float distanceToPlayer = Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart);
-        if (magnet.hasHooked())
-            if (magnet.pullself)
-                currentState = State.PullSelf;
-
-        if (distanceToPlayer < 1.5f)
-            currentState = State.Retracting;
-    }
-
-    void PullSelf()
-    {
-        gravity =  0;
-        float distanceToHook = Vector3.Distance(magnetStart, magnet.gameObject.transform.localPosition);
-        magnet.rb.linearVelocity = Vector3.zero;
-        if (distanceToHook > 0.8f)
-        {
-            Vector3 direction = (magnet.gameObject.transform.position - transform.position).normalized;
-            Vector3 move = direction * magnet.playerPullSpeed * Time.deltaTime;
-            directionFall = direction;
-            controller.Move(move);
-        }
-        else
-        {
-            currentState = State.Retracting;
-        }
-    }
-
-    void InertialMove()
-    {
-        gravity = selfGravity;
-        magnet.ReleaseHooked();
-        if (!controller.isGrounded)
-        {
-            Vector3 move = directionFall * magnet.playerPullSpeed * Time.deltaTime;
-            controller.Move(move);
-        }
-        else
-        {
-            isEnergized = true;
-            currentState = State.Idle;
-        }
-    }
-
-    void Retract()
-    {
-        gravity = selfGravity;
-        magnet.ReleaseHooked();
-        if (Vector3.Distance(magnet.gameObject.transform.localPosition, magnetStart) < 0.23f)
-        {
-            isEnergized = true;
-            magnet.rb.linearVelocity = Vector3.zero;
-            magnet.transform.localPosition = magnetStart;
-            currentState = State.Idle;
-        }
+        this.state?.Exit();
+        this.state = state;
+        this.state.Enter();
     }
 
     public override void TakeAction()
     {
-        if(currentState == State.Idle)
+        if(state.GetName() == "Idle" && aimCamera.gameObject.activeSelf)
         {
-            SearchTarget();
+            //ExitAim();
+            ChangeState(new RobotSmallShoot(this));
         }
-
     }
 
     public override void CancelAction()
     {
-        if (currentState == State.PullSelf)
+        if (state.GetName() == "PullSelf")
         {
-            magnet.ReleaseHooked();
-            currentState = State.Inertial;
+            ChangeState(new RobotSmallInertial(this));
         }
-        else if(currentState != State.Inertial)
+        else if(state.GetName() != "Inertial")
         {
-            Debug.Log("é pra soltar");
-            currentState = State.Retracting;
+            ChangeState(new RobotSmallRetract(this));
+        }
+    }
+
+    public override void Aim(bool s)
+    {
+        if (s)
+            EnterAim();
+        else
+            ExitAim();
+    }
+
+    void EnterAim()
+    {
+        if (aimCamera != null)
+        {
+            aimCamera.gameObject.SetActive(true);
+            Move = AimMove;
+        }
+    }
+    void ExitAim()
+    {
+        
+        if (aimCamera != null)
+        {
+            if (aimCamera.gameObject.activeSelf)
+            {
+                aimCamera.gameObject.SetActive(false);
+                Move = BaseMove;
+            }
+
+        }
+    }
+    void AimMove()
+    {
+        if (isEnergized)
+        {
+            Transform camera = Camera.main.transform;
+
+            Vector3 forward = camera.forward;
+            forward.y = 0;
+            forward.Normalize();
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed/3;
+            controller.Move(moveVector);
+
+            transform.rotation = Quaternion.LookRotation(forward);
         }
     }
 
@@ -162,29 +99,6 @@ public class RobotSmall:Robot
     {
         base.Update();
 
-        switch (currentState)
-        {
-            case State.Shooting:
-                Shoot();
-                break;
-            case State.PullObject:
-                PullObject();
-                break;
-            case State.PullSelf:
-                PullSelf();
-                break;
-            case State.Inertial:
-                InertialMove();
-                break;
-            case State.Retracting:
-                Retract();
-                break;
-            case State.Idle:
-                break;
-            default:
-                CancelAction();
-                break;
-        }
-
+        state.Update();
     }
 }

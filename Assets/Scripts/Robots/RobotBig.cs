@@ -40,8 +40,9 @@ public class RobotBig : Robot
     private ThrowableObject heldObject;
     private float currentPitch;
 
-    private void Start()
+    private new void Start()
     {
+        base.Start();
         if (aimCamera != null) aimCamera.gameObject.SetActive(false);
         if (trajectoryLine != null)
         {
@@ -76,11 +77,6 @@ public class RobotBig : Robot
         }
 
         bool rightHeld = Mouse.current != null && Mouse.current.rightButton.isPressed;
-
-        if (rightHeld && currentState == BigState.Holding)
-            EnterAim();
-        else if (!rightHeld && currentState == BigState.Aiming)
-            ExitAim();
 
         if (currentState == BigState.Aiming)
         {
@@ -132,6 +128,11 @@ public class RobotBig : Robot
         }
     }
 
+    public override void Aim(bool s)
+    {
+        if (s && currentState == BigState.Holding) EnterAim();
+        else if (currentState == BigState.Aiming) ExitAim();
+    }
     private void EnterAim()
     {
         currentState = BigState.Aiming;
@@ -144,6 +145,7 @@ public class RobotBig : Robot
             Debug.Log($"[EnterAim] trajectoryLine.enabled={trajectoryLine.enabled} gameObject ativo={trajectoryLine.gameObject.activeInHierarchy}");
         }
     }
+
 
     private void ExitAim()
     {

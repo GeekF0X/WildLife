@@ -1,6 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
-using static Unity.Cinemachine.CinemachineImpulseManager.ImpulseEvent;
+using UnityEngine.Events;
 
 public abstract class Robot : MonoBehaviour
 {
@@ -8,15 +8,18 @@ public abstract class Robot : MonoBehaviour
     public bool isEnergized;
     public float speed = 5f;
     public float gravity = -8f;
-    Vector3 moveDirection = new();
+    protected Vector3 moveDirection = new();
 
     public float fall;
     public Robot other;
     public CinemachineCamera cineCamera;
-    Transform lastCameraLook = null;
+    protected Transform lastCameraLook = null;
+    protected UnityAction Move;
 
     public void Change()
     {
+        CinemachineBrain brain = Camera.main.GetComponent<CinemachineBrain>();
+        brain.DefaultBlend.Time = 2;
         lastCameraLook = cineCamera.transform;
 
         isEnergized = false;
@@ -31,10 +34,30 @@ public abstract class Robot : MonoBehaviour
 
     void EnergyOther()
     {
+        CinemachineBrain brain = Camera.main.GetComponent<CinemachineBrain>();
+        brain.DefaultBlend.Time = 0.5f;
         other.isEnergized = true;
     }
 
     protected void Update()
+    {
+        Move();
+        Fall();
+    }
+
+    protected void Start()
+    {
+        Move = BaseMove;
+    }
+
+    public void MoveInput(Vector2 input)
+    {
+        if (isEnergized)
+        {
+            moveDirection = new Vector3(input.x, 0, input.y);
+        }
+    }
+    protected void BaseMove()
     {
         if (isEnergized)
         {
@@ -48,8 +71,13 @@ public abstract class Robot : MonoBehaviour
 
             controller.Move(moveVector);
 
-            transform.rotation = Quaternion.LookRotation(forward);
+            if(moveVector.magnitude > 0)
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 0.08f);
         }
+    }
+
+    void Fall() 
+    {
         controller.Move(Vector3.up * fall);
 
         if (controller.isGrounded)
@@ -58,15 +86,8 @@ public abstract class Robot : MonoBehaviour
             fall += gravity * Time.deltaTime;
     }
 
-    public void Move(Vector2 input)
-    {
-        if (isEnergized)
-        {
-            moveDirection = new Vector3(input.x, 0, input.y);
-        }
-    }
-
-
     public abstract void TakeAction();
     public abstract void CancelAction();
+
+    public abstract void Aim(bool shouldAim);
 }
