@@ -156,7 +156,7 @@ public class RobotSmallInertial : IStates
             player.ChangeState(new RobotSmallIdle(player));
         }
 
-        Vector3 move = player.directionFall * player.magnet.playerPullSpeed/1.3f * Time.deltaTime;
+        Vector3 move = player.directionFall * player.magnet.playerPullSpeed/1.1f * Time.deltaTime;
         player.controller.Move(move);
         
     }
