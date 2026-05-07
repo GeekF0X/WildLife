@@ -1271,6 +1271,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot1
       objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9935907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.054181665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0990591
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164643617767805611, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0054018083
+      objectReference: {fileID: 0}
     - target: {fileID: 7765910114578575336, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: other
       value: 
@@ -5049,7 +5065,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a44dc16b0b7e2c24ab83b7ad209346bc, type: 2}
+  - {fileID: -876546973899608171, guid: 964b76b0c59e90f42abd7a0fd794db39, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5686,7 +5702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085127605}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.054270092, y: 0.081165895, z: -0.004426072, w: 0.9952122}
+  m_LocalRotation: {x: 0.054181673, y: 0.099059105, z: -0.0054018092, w: 0.9935907}
   m_LocalPosition: {x: 0, y: 1.9000001, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
