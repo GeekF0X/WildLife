@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8097320232865421360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PickupRayOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2809034063504790761}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: -0.238, z: 0.01}
+  m_LocalPosition: {x: 0.024, y: -0.483, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 5047604021539887167}
   - component: {fileID: 4826972942350134524}
   - component: {fileID: 3608636324726322115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7611191299700780814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrowOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103145815947971751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoldPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 9130979693374832357}
   - component: {fileID: 6813482795358670449}
   - component: {fileID: 318794316863229315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrajectoryLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,9 +374,9 @@ GameObject:
   - component: {fileID: 1320661634641792502}
   - component: {fileID: 7633303324277175240}
   - component: {fileID: 4607656032139519114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Robot2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,8 +434,8 @@ MonoBehaviour:
   aimPriority: 20
   idlePriority: 0
   throwOrigin: {fileID: 7611191299700780814}
-  throwSpeed: 8
-  maxPitch: 60
+  throwSpeed: 9.05
+  maxPitch: 65.5
   aimSensitivity: 2
   trajectoryLine: {fileID: 6813482795358670449}
   trajectoryPoints: 40
@@ -465,7 +465,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 1.8
   m_Radius: 0.6
-  m_SlopeLimit: 45
+  m_SlopeLimit: 35
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8450950371129415844}
   - component: {fileID: 1566805073447698195}
   - component: {fileID: 8095613540554561992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FreeLook Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 3545360302330825690}
   - component: {fileID: 1423740750664369595}
   - component: {fileID: 3447177498317928759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AimCamera_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,8 +738,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8858496528040284675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19465232, y: -0.060580198, z: 0.012045937, w: 0.97892565}
-  m_LocalPosition: {x: 0.3000002, y: 0.9, z: -0.92999995}
+  m_LocalRotation: {x: 0.02590197, y: 0.059213564, z: -0.0015369634, w: 0.9979081}
+  m_LocalPosition: {x: 0.47999954, y: 0.8189697, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineOrbitalFollow
-  TargetOffset: {x: 0.3, y: 0, z: 0}
+  TargetOffset: {x: 0.48, y: 0, z: 0}
   TrackerSettings:
     BindingMode: 4
     PositionDamping: {x: 1, y: 1, z: 1}
@@ -811,15 +811,15 @@ MonoBehaviour:
   Radius: 5
   Orbits:
     Top:
-      Radius: 0.93
-      Height: 0.9
+      Radius: 1.5
+      Height: 1.2
     Center:
-      Radius: 1.38
+      Radius: 1.5
       Height: 0.41
     Bottom:
-      Radius: 1.18
-      Height: 0.15
-    SplineCurvature: 0.528
+      Radius: 1.5
+      Height: 0.03
+    SplineCurvature: 0
   RecenteringTarget: 2
   HorizontalAxis:
     Value: 0
@@ -832,7 +832,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 45
+    Value: 31.7
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotationComposer
   Composition:
-    ScreenPosition: {x: -0.17, y: 0.28887904}
+    ScreenPosition: {x: -0.28, y: 0.38}
     DeadZone:
       Enabled: 0
       Size: {x: 0.2, y: 0.2}
