@@ -5,30 +5,24 @@ public class ExitDestroy : MonoBehaviour
 {
 #nullable enable
     public GameObject? exitObj;
-    Collider? coll;
-
-    void Start()
-    {
-        if (TryGetComponent<Collider>(out coll))
-        {
-            throw new Exception(gameObject.name + " sem colisor!");
-        }
-    }
+    public Collider[] collisionList;
 
     private void OnTriggerExit(Collider collider)
     {
-        if (coll)
+        if (collisionList.Length > 0)
         {
             if (exitObj)
             {
                 if (collider.gameObject == exitObj)
                 {
-                    coll.enabled = false;
+                    foreach(Collider coll in collisionList)
+                        coll.enabled = false;
                 }
             }
             else
             {
-                coll.enabled = false;
+                foreach (Collider coll in collisionList)
+                    coll.enabled = false;
             }
         }
     }
