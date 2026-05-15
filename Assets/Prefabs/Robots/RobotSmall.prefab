@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagnetHook
   hookControl: {fileID: 1078599566746573083}
-  pullForce: 30
+  pullForce: 33
   maxPullableMass: 10
   magnetSpeed: 20
   playerPullSpeed: 11
