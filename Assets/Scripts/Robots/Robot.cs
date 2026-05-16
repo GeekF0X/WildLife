@@ -72,13 +72,14 @@ public abstract class Robot : MonoBehaviour
             controller.Move(moveVector);
 
             if(moveVector.magnitude > 0)
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 0.08f);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 0.1f);
         }
     }
 
     void Fall() 
     {
-        controller.Move(Vector3.up * fall);
+        if(controller.enabled)
+            controller.Move(Vector3.up * fall);
 
         if (controller.isGrounded)
             fall = 0;

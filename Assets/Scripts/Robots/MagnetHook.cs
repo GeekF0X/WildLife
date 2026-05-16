@@ -43,7 +43,6 @@ public class MagnetHook : MonoBehaviour
             }
             else
             {
-                Debug.Log(collision.rigidbody.mass > maxPullableMass);
                 pullself = false;
                 hookControl.spring = pullForce;
                 hookControl.maxDistance = 0.001f;

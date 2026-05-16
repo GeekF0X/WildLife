@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class TriggerDestroy : MonoBehaviour
 {
-#nullable enable
     public List<GameObject> trackingObjs;
     public Collider[] collisionList;
 
@@ -14,8 +13,6 @@ public class TriggerDestroy : MonoBehaviour
 
     UnityAction<Collider> EnterBehavior = (Collider col) => { return; };
     UnityAction<Collider> ExitBehavior = (Collider col) => { return; };
-
-    int count = 0;
 
     void Deactivate(Collider collider)
     {
@@ -83,14 +80,11 @@ public class TriggerDestroy : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        count --;
-        if(count == 0)
-            ExitBehavior(other);
+        ExitBehavior(other);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (count == 0)
-            EnterBehavior(other);
-        count++;
+        EnterBehavior(other);
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RobotSmall:Robot
 {
-    IStates state;
+    public IStates state { get; private set; }
 
     public CinemachineCamera aimCamera;
     public Transform raycastOffset;
@@ -93,6 +93,14 @@ public class RobotSmall:Robot
 
             transform.rotation = Quaternion.LookRotation(forward);
         }
+    }
+
+    public void ResetTransform()
+    {
+        transform.rotation = Quaternion.identity;
+        magnet.transform.rotation = Quaternion.Euler(new Vector3(0,180,0));
+        magnet.transform.position = magnetStart;
+        magnet.rb.linearVelocity = Vector3.zero;
     }
 
     new private void Update()
