@@ -33,7 +33,7 @@ public class MagnetHook : MonoBehaviour
                 return;
             gameObject.AddComponent<FixedJoint>();
             GetComponent<FixedJoint>().connectedBody = collision.rigidbody;
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.CompareTag("Player"))
             {
                 pullself = true;
             }

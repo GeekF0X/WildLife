@@ -41,5 +41,7 @@ public class ThrowableObject : MonoBehaviour
         col.enabled   = true;
         rb.linearVelocity  = initialVelocity;
         rb.angularVelocity = Random.insideUnitSphere * 2f;
+        if(TryGetComponent<HitDestroy>(out HitDestroy obj))
+            obj.enabledDestroy = true;
     }
 }

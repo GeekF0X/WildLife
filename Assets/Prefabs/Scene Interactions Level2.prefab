@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6427911734623308835}
   - component: {fileID: 3152255537321539492}
   - component: {fileID: 5348656982903167680}
+  - component: {fileID: 6853127414176394087}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -245,6 +246,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowableObject
   throwableMass: 1
+--- !u!114 &6853127414176394087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990882555945525900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188bbdfd7c363414ab29895223038a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitDestroy
+  behavior: 1
+  hitObj: []
+  enabledDestroy: 1
 --- !u!1 &1029887785527928708
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +461,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188bbdfd7c363414ab29895223038a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitDestroy
-  hitObj: {fileID: 990882555945525900}
+  behavior: 0
+  hitObj:
+  - {fileID: 990882555945525900}
+  - {fileID: 0}
+  enabledDestroy: 1
 --- !u!1 &1225610571082937962
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,12 +802,12 @@ ArticulationBody:
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.8204514, z: 0, w: 0.57171637}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
+  m_LinearY: 0
+  m_LinearZ: 0
+  m_SwingY: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -47.73
@@ -808,7 +828,7 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
+    lowerLimit: -10.21
     upperLimit: 0
     stiffness: 0
     damping: 0
@@ -816,7 +836,7 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
+  m_LinearDamping: 4.1
   m_AngularDamping: 0.05
   m_JointFriction: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1009,12 +1029,12 @@ ArticulationBody:
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.8204514, z: 0, w: 0.57171637}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
+  m_LinearY: 0
+  m_LinearZ: 0
+  m_SwingY: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -47.73
@@ -1035,7 +1055,7 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
+    lowerLimit: -10.21
     upperLimit: 0
     stiffness: 0
     damping: 0
@@ -1043,7 +1063,7 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
+  m_LinearDamping: 4.1
   m_AngularDamping: 0.05
   m_JointFriction: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1242,12 +1262,12 @@ ArticulationBody:
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.8204514, z: 0, w: 0.57171637}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
+  m_LinearY: 0
+  m_LinearZ: 0
+  m_SwingY: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -47.73
@@ -1268,7 +1288,7 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
+    lowerLimit: -10.21
     upperLimit: 0
     stiffness: 0
     damping: 0
@@ -1276,7 +1296,7 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
+  m_LinearDamping: 4.1
   m_AngularDamping: 0.05
   m_JointFriction: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1363,12 +1383,12 @@ ArticulationBody:
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
+  m_LinearY: 0
+  m_LinearZ: 0
+  m_SwingY: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -47.73
@@ -1389,7 +1409,7 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
+    lowerLimit: -10.21
     upperLimit: 0
     stiffness: 0
     damping: 0
@@ -1397,7 +1417,7 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
+  m_LinearDamping: 4.1
   m_AngularDamping: 0.05
   m_JointFriction: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1460,7 +1480,7 @@ Transform:
   m_GameObject: {fileID: 4041062441389412093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.16, y: 0.208, z: -0.39}
+  m_LocalPosition: {x: -4.705, y: 4.17, z: -3.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2267,12 +2287,12 @@ ArticulationBody:
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0.8204514, z: 0, w: 0.57171637}
   m_MatchAnchors: 1
-  m_ArticulationJointType: 2
+  m_ArticulationJointType: 3
   m_LinearX: 2
-  m_LinearY: 2
-  m_LinearZ: 2
-  m_SwingY: 2
-  m_SwingZ: 2
+  m_LinearY: 0
+  m_LinearZ: 0
+  m_SwingY: 0
+  m_SwingZ: 1
   m_Twist: 1
   m_XDrive:
     lowerLimit: -47.73
@@ -2293,7 +2313,7 @@ ArticulationBody:
     targetVelocity: 0
     driveType: 0
   m_ZDrive:
-    lowerLimit: 0
+    lowerLimit: -10.21
     upperLimit: 0
     stiffness: 0
     damping: 0
@@ -2301,7 +2321,7 @@ ArticulationBody:
     target: 0
     targetVelocity: 0
     driveType: 0
-  m_LinearDamping: 0.05
+  m_LinearDamping: 4.1
   m_AngularDamping: 0.05
   m_JointFriction: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3611,7 +3631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188bbdfd7c363414ab29895223038a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitDestroy
-  hitObj: {fileID: 6035865827120420639}
+  behavior: 0
+  hitObj:
+  - {fileID: 6035865827120420639}
+  enabledDestroy: 1
 --- !u!95 &7857811700308209271
 Animator:
   serializedVersion: 7

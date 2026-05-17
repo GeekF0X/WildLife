@@ -110,7 +110,7 @@ public class RobotBig : Robot
                                QueryTriggerInteraction.Ignore))
         {
             ThrowableObject t;
-            if (hit.collider.tag == "Player")
+            if (hit.collider.CompareTag("Player"))
             {
                 var otherRobot = (RobotSmall)other;
                 if (otherRobot.state.GetName() != "Idle")
