@@ -46,13 +46,14 @@ public class HitDestroy : MonoBehaviour
                 return;
             }
         } 
-
+        
         if (coll)
         {
             if (behavior == Behaviors.Collectible && collision.gameObject.CompareTag("Player"))
             {
                 coll.enabled = false;
-                anim?.SetTrigger("Hit");
+                //anim?.SetTrigger("Hit");
+                Destroy(gameObject);
                 return;
             }
             if (hitObj.Count > 0)
