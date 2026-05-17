@@ -428,7 +428,7 @@ MonoBehaviour:
   pickupRadius: 0.48
   throwableMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   holdPoint: {fileID: 3103145815947971751}
   aimCamera: {fileID: 7160454598208455334}
   aimPriority: 20
@@ -533,7 +533,7 @@ MonoBehaviour:
     FieldOfView: 60.000004
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 2000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -772,7 +772,7 @@ MonoBehaviour:
     FieldOfView: 60.000004
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 2000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
