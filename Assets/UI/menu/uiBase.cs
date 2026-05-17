@@ -14,7 +14,7 @@ public class uiBase : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Blocagem");
+        SceneManager.LoadScene("Controles");
     }
 
     public void config()
