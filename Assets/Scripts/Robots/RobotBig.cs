@@ -109,7 +109,23 @@ public class RobotBig : Robot
                                pickupRange, throwableMask,
                                QueryTriggerInteraction.Ignore))
         {
-            var t = hit.collider.GetComponentInParent<ThrowableObject>();
+            ThrowableObject t;
+            if (hit.collider.CompareTag("Player"))
+            {
+                var otherRobot = (RobotSmall)other;
+                if (otherRobot.state.GetName() != "Idle")
+                    return;
+                GameObject robotThrowAdapter = new GameObject("RobotThrowObj");
+                robotThrowAdapter.AddComponent<Rigidbody>();
+                robotThrowAdapter.AddComponent<BoxCollider>();
+                var a = robotThrowAdapter.AddComponent<RobotThrowableAdapter>();
+                a.RobotSet(otherRobot);
+                t = a;
+            }
+            else
+            {
+                t = hit.collider.GetComponentInParent<ThrowableObject>();
+            }
             if (t != null && !t.IsHeld)
             {
                 t.OnPickedUp(holdPoint);
@@ -177,7 +193,7 @@ public class RobotBig : Robot
     {
         if (trajectoryLine == null || throwOrigin == null) return;
 
-        Debug.Log($"[Draw] enabled={trajectoryLine.enabled} count será={trajectoryPoints} startPos={throwOrigin.position}");
+        //Debug.Log($"[Draw] enabled={trajectoryLine.enabled} count será={trajectoryPoints} startPos={throwOrigin.position}");
 
         Vector3 startPos = throwOrigin.position;
         Vector3 velocity = GetThrowVelocity();

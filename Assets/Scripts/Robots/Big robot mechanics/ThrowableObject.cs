@@ -7,8 +7,8 @@ public class ThrowableObject : MonoBehaviour
     [Tooltip("Massa considerada no cálculo da trajetória.")]
     public float throwableMass = 1f;
 
-    private Rigidbody rb;
-    private Collider col;
+    protected Rigidbody rb;
+    protected Collider col;
 
     public Rigidbody Rb => rb;
     public Collider Col => col;
@@ -21,7 +21,7 @@ public class ThrowableObject : MonoBehaviour
         rb.mass = throwableMass;
     }
 
-    public void OnPickedUp(Transform holdPoint)
+    virtual public void OnPickedUp(Transform holdPoint)
     {
         IsHeld = true;
         rb.isKinematic = true;
@@ -32,7 +32,7 @@ public class ThrowableObject : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
-    public void OnThrown(Vector3 initialVelocity)
+    virtual public void OnThrown(Vector3 initialVelocity)
     {
         IsHeld = false;
         transform.SetParent(null);
@@ -41,5 +41,7 @@ public class ThrowableObject : MonoBehaviour
         col.enabled   = true;
         rb.linearVelocity  = initialVelocity;
         rb.angularVelocity = Random.insideUnitSphere * 2f;
+        if(TryGetComponent<HitDestroy>(out HitDestroy obj))
+            obj.enabledDestroy = true;
     }
 }

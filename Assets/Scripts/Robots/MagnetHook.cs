@@ -26,19 +26,23 @@ public class MagnetHook : MonoBehaviour
         colliding++;
         hit = true;
         GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        if (collision.gameObject.tag == "Hookable" && hookControl.spring == 0)
+        bool hookable = collision.gameObject.tag == "Hookable" || collision.gameObject.tag == "Player";
+        if (hookable && hookControl.spring == 0)
         {
             if (hasHooked())
                 return;
             gameObject.AddComponent<FixedJoint>();
             GetComponent<FixedJoint>().connectedBody = collision.rigidbody;
-            if(collision.rigidbody.mass > maxPullableMass || collision.rigidbody.isKinematic)
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                pullself = true;
+            }
+            else if (collision.rigidbody.mass > maxPullableMass || collision.rigidbody.isKinematic)
             {
                 pullself = true;
             }
             else
             {
-                Debug.Log(collision.rigidbody.mass > maxPullableMass);
                 pullself = false;
                 hookControl.spring = pullForce;
                 hookControl.maxDistance = 0.001f;
