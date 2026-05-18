@@ -34,6 +34,7 @@ public class RobotBig : Robot
     public LayerMask trajectoryCollisionMask = ~0;
 
     [Header("Animation")]
+    public RobotAnimations animations;
     public Animator animator;
     public float throwAnimDelay = 0.15f;
 
@@ -83,6 +84,8 @@ public class RobotBig : Robot
             UpdateAim();
         }
         base.Update();
+        animations.SetMoving(base.moveDirection.magnitude > 0);
+
     }
 
     void AimMove()

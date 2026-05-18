@@ -22,11 +22,16 @@ public abstract class Robot : MonoBehaviour
         brain.DefaultBlend.Time = 2;
         lastCameraLook = cineCamera.transform;
 
+        if (TryGetComponent<RobotAnimations>(out RobotAnimations animations))
+            animations.PowerButton();
+
         isEnergized = false;
         moveDirection = Vector3.zero;
         cineCamera.enabled = false;
 
         other.cineCamera.enabled = true;
+        if (other.TryGetComponent<RobotAnimations>(out RobotAnimations otherAnimations))
+            otherAnimations.Invoke("PowerButton", 1f);
         Invoke("EnergyOther", Camera.main.GetComponent<CinemachineBrain>().DefaultBlend.Time);
         if(other.lastCameraLook != null)
             other.cineCamera.ForceCameraPosition(other.lastCameraLook.position, other.lastCameraLook.rotation);
