@@ -10,6 +10,7 @@ public class TriggerDestroy : MonoBehaviour
 
     public enum Behaviors { Enter, Exit, StayActivate, StayDeactivate}
     public Behaviors behavior;
+    public bool selfDestroy = false;
 
     UnityAction<Collider> EnterBehavior = (Collider col) => { return; };
     UnityAction<Collider> ExitBehavior = (Collider col) => { return; };
@@ -23,7 +24,10 @@ public class TriggerDestroy : MonoBehaviour
                 if (trackingObjs.Contains(collider.gameObject))
                 {
                     foreach (Collider coll in collisionList)
+                    {
                         coll.enabled = false;
+                        if (selfDestroy) Destroy(coll.gameObject);
+                    }
                     return;
                 }
             }
@@ -85,6 +89,7 @@ public class TriggerDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Colidiu " + other.tag);
         EnterBehavior(other);
     }
 }

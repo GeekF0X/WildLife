@@ -14,6 +14,8 @@ public class HitDestroy : MonoBehaviour
     Vector3 initialPosition;
 
     public bool enabledDestroy = true;
+    public bool selfDestroy = false;
+
     void Start()
     {
         TryGetComponent<Animator>(out anim);
@@ -40,10 +42,14 @@ public class HitDestroy : MonoBehaviour
                 return;
             else
             {
-                GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-                transform.localPosition = initialPosition;
-                enabledDestroy = false;
-                return;
+                if (selfDestroy) Destroy(gameObject);
+                else
+                {
+                    GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                    transform.localPosition = initialPosition;
+                    enabledDestroy = false;
+                    return;
+                }
             }
         } 
         
@@ -52,8 +58,8 @@ public class HitDestroy : MonoBehaviour
             if (behavior == Behaviors.Collectible && collision.gameObject.CompareTag("Player"))
             {
                 coll.enabled = false;
-                //anim?.SetTrigger("Hit");
-                Destroy(gameObject);
+                anim?.SetTrigger("Hit");
+                //Destroy(gameObject);
                 return;
             }
             if (hitObj.Count > 0)
