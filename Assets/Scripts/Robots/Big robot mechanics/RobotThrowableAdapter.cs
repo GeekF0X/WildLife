@@ -34,5 +34,6 @@ public class RobotThrowableAdapter : ThrowableObject
         robot.transform.localPosition = Vector3.zero;
         robot.controller.enabled = false;
         robot.ResetTransform();
+        robot.magnet.hookControl.spring = 2000;
     }
 }
