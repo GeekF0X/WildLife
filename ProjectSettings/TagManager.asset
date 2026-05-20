@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hookable
   - OffLimits
+  - River
   layers:
   - Default
   - TransparentFX
