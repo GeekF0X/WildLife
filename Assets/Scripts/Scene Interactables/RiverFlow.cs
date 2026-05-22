@@ -1,7 +1,5 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
-using static UnityEditor.Rendering.CameraUI;
 
 public class RiverFlow : MonoBehaviour
 {
