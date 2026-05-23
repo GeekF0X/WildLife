@@ -16,11 +16,6 @@ public class RobotBig : Robot
     [Tooltip("Ponto acima da cabeça onde o objeto fica.")]
     public Transform holdPoint;
 
-    [Header("Aim (Cinemachine)")]
-    public CinemachineCamera aimCamera;
-    public int aimPriority = 20;
-    public int idlePriority = 0;
-
     [Header("Throw")]
     public Transform throwOrigin;
     public float throwSpeed     = 18f;
