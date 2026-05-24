@@ -14583,8 +14583,8 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 3
-    scalar: 5
-    minScalar: 10
+    scalar: 0
+    minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -14643,8 +14643,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 25
-      minScalar: 15
+      scalar: 4
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34368,11 +34368,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 723851638}
   m_LocalEulerAnglesHint: {x: 0, y: 1.633, z: 0}
---- !u!4 &1935908343 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4050209412634474978, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
-  m_PrefabInstance: {fileID: 1974094265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1948405290
 GameObject:
   m_ObjectHideFlags: 0
@@ -34860,6 +34855,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8797549439002914867, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797549439002914867, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797549439002914867, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[2]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797549439002914867, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[3]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797549439002914867, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[4]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8852157715491226386, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -34912,11 +34927,16 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6944610837389025473, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4050209412634474978, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 9164505580269567511, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 402540833030486988}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+--- !u!4 &1974094266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9164505580269567511, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+  m_PrefabInstance: {fileID: 1974094265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2002453538
 Mesh:
   m_ObjectHideFlags: 0
@@ -35977,7 +35997,7 @@ Transform:
   m_Children:
   - {fileID: 8729886563971165010}
   - {fileID: 6407457450490016768}
-  m_Father: {fileID: 1935908343}
+  m_Father: {fileID: 1974094266}
   m_LocalEulerAnglesHint: {x: 11.507, y: -188, z: 0}
 --- !u!1 &433700492718517792 stripped
 GameObject:
@@ -36938,7 +36958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1089798354436079625
 MeshFilter:
   m_ObjectHideFlags: 0
