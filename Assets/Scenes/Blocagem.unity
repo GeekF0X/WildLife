@@ -19503,10 +19503,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 899708159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e22c17e567ff7f40956b9cda22ea7dc, type: 3}
+  m_Script: {fileID: 11500000, guid: c38939c6827c30e45875f5eb564db7c1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaterfallAnim
-  obj: {fileID: 1877792270}
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerAnim
   anim: {fileID: 437888725}
 --- !u!4 &904388831 stripped
 Transform:
@@ -32591,11 +32590,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4583467165816326547, guid: f5e9c4a7dabbe9447af2bd403984a01e, type: 3}
---- !u!1 &1877792270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8160578188122758915, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
-  m_PrefabInstance: {fileID: 1974094265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888917111
 GameObject:
   m_ObjectHideFlags: 0
@@ -34673,11 +34667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5434123630979920902, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.095
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 5434123630979920902, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.086
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 5929627599240945579, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34697,15 +34691,15 @@ PrefabInstance:
       objectReference: {fileID: 111379503}
     - target: {fileID: 8159764600654640006, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.84
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 8159764600654640006, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -9.29
       objectReference: {fileID: 0}
     - target: {fileID: 8159764600654640006, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.84
+      value: 5.39
       objectReference: {fileID: 0}
     - target: {fileID: 8331737658585861206, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: 'm_BlendShapeWeights.Array.data[0]'
@@ -34744,6 +34738,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 955347302}
     - target: {fileID: 8510139071937080188, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 437888725}
+    - target: {fileID: 8510139071937080188, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: Cachoeira
       value: 
       objectReference: {fileID: 437888725}
@@ -34781,7 +34779,7 @@ PrefabInstance:
       objectReference: {fileID: 1064486022}
     - target: {fileID: 8852157715491226386, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_VersionIndex
-      value: 748
+      value: 754
       objectReference: {fileID: 0}
     - target: {fileID: 9164505580269567511, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.x
