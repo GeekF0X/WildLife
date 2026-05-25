@@ -13,11 +13,13 @@ public class TriggerAnim : MonoBehaviour
     {
         anim?.SetBool("Blocked", false);
         ExitBehavior(other);
+        anim.ResetTrigger("Stop");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         anim?.SetBool("Blocked", true);
+        anim.ResetTrigger("Stop");
         anim?.SetTrigger("Stop");
         Debug.Log("Colidiu " + other.tag);
         EnterBehavior(other);
