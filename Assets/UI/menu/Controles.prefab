@@ -806,7 +806,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Retrair Im\xE3\n(rob\xF4 pequeno)\nMira (se soltar atira)\n(rob\xF4 grande)"
+  m_Text: "Atira o gancho de im\xE3\n(rob\xF4 pequeno)\nMira (se soltar atira)\n(rob\xF4
+    grande)"
 --- !u!1 &4304203394617983798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,4 +1123,5 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gancho de Im\xE3\n(rob\xF4 pequeno)\nPega e solta item\n(rob\xF4 grande)"
+  m_Text: "Mira o gancho de im\xE3\n(rob\xF4 pequeno)\nPega e solta item\n(rob\xF4
+    grande)"

@@ -5,7 +5,6 @@ public class RobotSmall:Robot
 {
     public IStates state { get; private set; }
 
-    public CinemachineCamera aimCamera;
     public Transform raycastOffset;
     public MagnetHook magnet;
 

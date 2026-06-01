@@ -13,6 +13,8 @@ public abstract class Robot : MonoBehaviour
     public float fall;
     public Robot other;
     public CinemachineCamera cineCamera;
+    public CinemachineCamera aimCamera;
+
     protected Transform lastCameraLook = null;
     protected UnityAction Move;
 
@@ -28,6 +30,7 @@ public abstract class Robot : MonoBehaviour
         isEnergized = false;
         moveDirection = Vector3.zero;
         cineCamera.enabled = false;
+        aimCamera.gameObject.SetActive(false);
 
         other.cineCamera.enabled = true;
         if (other.TryGetComponent<RobotAnimations>(out RobotAnimations otherAnimations))
