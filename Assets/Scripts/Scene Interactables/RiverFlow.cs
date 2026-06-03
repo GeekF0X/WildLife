@@ -18,7 +18,6 @@ public class RiverFlow : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Verifica se entrou no rio
         if (other.CompareTag("River") && !rb.isKinematic)
         {
             EnterRiver(transform.position);
