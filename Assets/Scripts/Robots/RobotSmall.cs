@@ -66,8 +66,7 @@ public class RobotSmall:Robot
         }
     }
     void ExitAim()
-    {
-        
+    {     
         if (aimCamera != null)
         {
             if (aimCamera.gameObject.activeSelf)
@@ -87,7 +86,7 @@ public class RobotSmall:Robot
             Vector3 forward = camera.forward;
             forward.y = 0;
             forward.Normalize();
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed/3;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.fixedDeltaTime * speed/3;
             controller.Move(moveVector);
 
             transform.rotation = Quaternion.LookRotation(forward);
@@ -103,10 +102,8 @@ public class RobotSmall:Robot
         magnet.rb.linearVelocity = Vector3.zero;
     }
 
-    new private void Update()
+    private void Update()
     {
-        base.Update();
-
         state.Update();
     }
 }

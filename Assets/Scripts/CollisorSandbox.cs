@@ -7,7 +7,7 @@ public class CollisorSandbox : MonoBehaviour
     {
         if (other.gameObject.tag == "OffLimits")
         {
-            SceneManager.LoadScene("Sandbox");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Sandbox");
         }
     }
 }

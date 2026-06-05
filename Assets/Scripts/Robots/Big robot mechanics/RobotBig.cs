@@ -47,8 +47,7 @@ public class RobotBig : Robot
         }
     }
 
-    //protected override bool ShouldFaceCamera() => currentState != BigState.Aiming;
-
+    
     public override void TakeAction()
     {
         switch (currentState)
@@ -64,21 +63,14 @@ public class RobotBig : Robot
 
     }
 
-    new private void Update()
+    private void Update()
     {
-        if (!isEnergized)
-        {
-            base.Update();
-            return;
-        }
-
         bool rightHeld = Mouse.current != null && Mouse.current.rightButton.isPressed;
 
         if (currentState == BigState.Aiming)
         {
             UpdateAim();
         }
-        base.Update();
         animations.SetMoving(base.moveDirection.magnitude > 0);
 
     }
@@ -92,7 +84,7 @@ public class RobotBig : Robot
             Vector3 forward = camera.forward;
             forward.y = 0;
             forward.Normalize();
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed / 3;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.fixedDeltaTime * speed / 3;
             controller.Move(moveVector);
 
             transform.rotation = Quaternion.LookRotation(forward);

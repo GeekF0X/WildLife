@@ -5,6 +5,6 @@ public class ContinuarButton : MonoBehaviour
 {
     public void Continuar()
     {
-        SceneManager.LoadScene("Blocagem");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Blocagem");
     }
 }

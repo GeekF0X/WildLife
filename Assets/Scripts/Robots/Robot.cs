@@ -47,7 +47,7 @@ public abstract class Robot : MonoBehaviour
         other.isEnergized = true;
     }
 
-    protected void Update()
+    protected void FixedUpdate()
     {
         Move();
         Fall();
@@ -75,12 +75,12 @@ public abstract class Robot : MonoBehaviour
             forward.y = 0;
             forward.Normalize();
 
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.fixedDeltaTime * speed;
 
             controller.Move(moveVector);
 
             if(moveVector.magnitude > 0)
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 0.1f);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 12f * Time.fixedDeltaTime);
         }
     }
 
@@ -92,7 +92,7 @@ public abstract class Robot : MonoBehaviour
         if (controller.isGrounded)
             fall = 0;
         else
-            fall += gravity * Time.deltaTime;
+            fall += gravity * Time.fixedDeltaTime;
     }
 
     public abstract void TakeAction();
