@@ -131,7 +131,7 @@ public class RobotBig : Robot
         if (s && currentState == BigState.Holding) EnterAim();
         else if (currentState == BigState.Aiming) ExitAim();
     }
-    private void EnterAim()
+    protected override void EnterAim()
     {
         Move = AimMove;
         currentState = BigState.Aiming;
@@ -146,12 +146,18 @@ public class RobotBig : Robot
     }
 
 
-    private void ExitAim()
+    protected override void ExitAim()
     {
-        Move = BaseMove;
-        currentState = BigState.Holding;
 
-        if (aimCamera != null) aimCamera.gameObject.SetActive(false);
+        if (aimCamera != null) 
+        {
+            if (aimCamera.gameObject.activeSelf)
+            {
+                Move = BaseMove;
+                currentState = BigState.Holding;
+            }
+            aimCamera.gameObject.SetActive(false);
+        } 
         if (trajectoryLine != null)
         {
             trajectoryLine.enabled = false;

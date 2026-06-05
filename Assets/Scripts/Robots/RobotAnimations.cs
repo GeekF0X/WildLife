@@ -9,8 +9,13 @@ public class RobotAnimations : MonoBehaviour
         animator.SetBool("Moving", moving);
     }
 
-    public void PowerButton()
+    public void TurnOn()
     {
-        animator.SetTrigger("Power");
+        animator.SetBool("Power", true);
     }
+    public void TurnOff()
+    {
+        animator.SetBool("Power", false);
+    }
+
 }

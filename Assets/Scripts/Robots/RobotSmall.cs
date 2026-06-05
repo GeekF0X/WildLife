@@ -57,7 +57,7 @@ public class RobotSmall:Robot
             ExitAim();
     }
 
-    void EnterAim()
+    protected override void EnterAim()
     {
         if (aimCamera != null)
         {
@@ -65,7 +65,7 @@ public class RobotSmall:Robot
             Move = AimMove;
         }
     }
-    void ExitAim()
+    protected override void ExitAim()
     {     
         if (aimCamera != null)
         {
@@ -105,5 +105,9 @@ public class RobotSmall:Robot
     private void Update()
     {
         state.Update();
+        if(state.GetName() != "Idle" && isEnergized)
+        {
+            isEnergized = false;
+        }
     }
 }

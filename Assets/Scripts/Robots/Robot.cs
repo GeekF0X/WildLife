@@ -25,17 +25,20 @@ public abstract class Robot : MonoBehaviour
         lastCameraLook = cineCamera.transform;
 
         if (TryGetComponent<RobotAnimations>(out RobotAnimations animations))
-            animations.PowerButton();
-
+        {
+            animations.CancelInvoke();
+            animations.TurnOff();
+        }
         isEnergized = false;
         moveDirection = Vector3.zero;
         cineCamera.enabled = false;
-        aimCamera.gameObject.SetActive(false);
+        ExitAim();
 
         other.cineCamera.enabled = true;
         if (other.TryGetComponent<RobotAnimations>(out RobotAnimations otherAnimations))
-            otherAnimations.Invoke("PowerButton", 1f);
+            otherAnimations.Invoke("TurnOn", 1.3f);
         Invoke("EnergyOther", Camera.main.GetComponent<CinemachineBrain>().DefaultBlend.Time);
+        
         if(other.lastCameraLook != null)
             other.cineCamera.ForceCameraPosition(other.lastCameraLook.position, other.lastCameraLook.rotation);
     }
@@ -80,7 +83,7 @@ public abstract class Robot : MonoBehaviour
             controller.Move(moveVector);
 
             if(moveVector.magnitude > 0)
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 12f * Time.fixedDeltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 15f * Time.fixedDeltaTime);
         }
     }
 
@@ -99,4 +102,7 @@ public abstract class Robot : MonoBehaviour
     public abstract void CancelAction();
 
     public abstract void Aim(bool shouldAim);
+    protected abstract void EnterAim();
+    protected abstract void ExitAim();
+
 }
