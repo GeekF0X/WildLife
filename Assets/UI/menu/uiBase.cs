@@ -9,12 +9,12 @@ public class uiBase : MonoBehaviour
 
     public void Sandbox()
     {
-        SceneManager.LoadScene("Sandbox");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Sandbox");
     }
 
     public void Play()
     {
-        SceneManager.LoadScene("Controles");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Controles");
     }
 
     public void config()

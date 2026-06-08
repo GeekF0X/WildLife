@@ -25,17 +25,20 @@ public abstract class Robot : MonoBehaviour
         lastCameraLook = cineCamera.transform;
 
         if (TryGetComponent<RobotAnimations>(out RobotAnimations animations))
-            animations.PowerButton();
-
+        {
+            animations.CancelInvoke();
+            animations.TurnOff();
+        }
         isEnergized = false;
         moveDirection = Vector3.zero;
         cineCamera.enabled = false;
-        aimCamera.gameObject.SetActive(false);
+        ExitAim();
 
         other.cineCamera.enabled = true;
         if (other.TryGetComponent<RobotAnimations>(out RobotAnimations otherAnimations))
-            otherAnimations.Invoke("PowerButton", 1f);
+            otherAnimations.Invoke("TurnOn", 1.3f);
         Invoke("EnergyOther", Camera.main.GetComponent<CinemachineBrain>().DefaultBlend.Time);
+        
         if(other.lastCameraLook != null)
             other.cineCamera.ForceCameraPosition(other.lastCameraLook.position, other.lastCameraLook.rotation);
     }
@@ -47,7 +50,7 @@ public abstract class Robot : MonoBehaviour
         other.isEnergized = true;
     }
 
-    protected void Update()
+    protected void FixedUpdate()
     {
         Move();
         Fall();
@@ -75,12 +78,12 @@ public abstract class Robot : MonoBehaviour
             forward.y = 0;
             forward.Normalize();
 
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.fixedDeltaTime * speed;
 
             controller.Move(moveVector);
 
             if(moveVector.magnitude > 0)
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 0.1f);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVector), 15f * Time.fixedDeltaTime);
         }
     }
 
@@ -92,11 +95,14 @@ public abstract class Robot : MonoBehaviour
         if (controller.isGrounded)
             fall = 0;
         else
-            fall += gravity * Time.deltaTime;
+            fall += gravity * Time.fixedDeltaTime;
     }
 
     public abstract void TakeAction();
     public abstract void CancelAction();
 
     public abstract void Aim(bool shouldAim);
+    protected abstract void EnterAim();
+    protected abstract void ExitAim();
+
 }

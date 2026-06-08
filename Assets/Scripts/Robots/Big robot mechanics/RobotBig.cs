@@ -47,8 +47,7 @@ public class RobotBig : Robot
         }
     }
 
-    //protected override bool ShouldFaceCamera() => currentState != BigState.Aiming;
-
+    
     public override void TakeAction()
     {
         switch (currentState)
@@ -64,21 +63,14 @@ public class RobotBig : Robot
 
     }
 
-    new private void Update()
+    private void Update()
     {
-        if (!isEnergized)
-        {
-            base.Update();
-            return;
-        }
-
         bool rightHeld = Mouse.current != null && Mouse.current.rightButton.isPressed;
 
         if (currentState == BigState.Aiming)
         {
             UpdateAim();
         }
-        base.Update();
         animations.SetMoving(base.moveDirection.magnitude > 0);
 
     }
@@ -92,7 +84,7 @@ public class RobotBig : Robot
             Vector3 forward = camera.forward;
             forward.y = 0;
             forward.Normalize();
-            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.deltaTime * speed / 3;
+            Vector3 moveVector = (forward * moveDirection.z + camera.right * moveDirection.x) * Time.fixedDeltaTime * speed / 3;
             controller.Move(moveVector);
 
             transform.rotation = Quaternion.LookRotation(forward);
@@ -139,7 +131,7 @@ public class RobotBig : Robot
         if (s && currentState == BigState.Holding) EnterAim();
         else if (currentState == BigState.Aiming) ExitAim();
     }
-    private void EnterAim()
+    protected override void EnterAim()
     {
         Move = AimMove;
         currentState = BigState.Aiming;
@@ -154,12 +146,18 @@ public class RobotBig : Robot
     }
 
 
-    private void ExitAim()
+    protected override void ExitAim()
     {
-        Move = BaseMove;
-        currentState = BigState.Holding;
 
-        if (aimCamera != null) aimCamera.gameObject.SetActive(false);
+        if (aimCamera != null) 
+        {
+            if (aimCamera.gameObject.activeSelf)
+            {
+                Move = BaseMove;
+                currentState = BigState.Holding;
+            }
+            aimCamera.gameObject.SetActive(false);
+        } 
         if (trajectoryLine != null)
         {
             trajectoryLine.enabled = false;

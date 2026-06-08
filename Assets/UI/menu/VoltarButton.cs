@@ -5,6 +5,6 @@ public class VoltarButton : MonoBehaviour
 {
     public void Voltar()
     {
-        SceneManager.LoadScene("testeui");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("testeui");
     }
 }
