@@ -14,8 +14,13 @@ public class DataManager : MonoBehaviour
     {
         if (SaveManager.Load() == null)
         {
-            Debug.Log("coe");
-            
+            SaveData data = new();
+            data.sceneData = new();
+            data.achievDava = new();
+            data.sceneData.level = SceneManager.GetActiveScene().name;
+            data.sceneData.small = new RobotDataAdapter(small);
+            data.sceneData.big = new RobotDataAdapter(big);
+            SaveManager.Save(data);
         }
         else
         {
@@ -31,7 +36,6 @@ public class DataManager : MonoBehaviour
             if (small)
             {
                 RobotDataAdapter robot = new(Global.saveScene.small);
-                Debug.Log(robot.position);
                 robot.LoadRobot(ref small);
             }
             if (big)
@@ -44,9 +48,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveCheckpoint(Checkpoint checkpoint)
     {
-        SaveData data = new();
-        data.sceneData = new();
-        data.achievDava = Global.achievment;
+        SaveData data = SaveManager.Load();
 
         data.sceneData.level = SceneManager.GetActiveScene().name;
         data.sceneData.checkpoint = checkpointIndex;
@@ -55,12 +57,19 @@ public class DataManager : MonoBehaviour
 
         SaveManager.Save(data);
     }
+    public void SaveItempego(GameObject obj)
+    {
+        SaveData data = SaveManager.Load();
+
+        data.achievDava.achievName.Add(obj.name);
+        data.achievDava.achievValue.Add(true);
+        SaveManager.Save(data);
+    }
 
     public void LoadGame()
     {
         SaveData data = SaveManager.Load();
-        Debug.Log(data.sceneData);
-        Debug.Log(data.sceneData.level);
+        
         Global.saveScene = data.sceneData;
 
         //SceneManager.LoadScene(data.sceneData.level);

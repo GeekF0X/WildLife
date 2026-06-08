@@ -375,6 +375,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb7fb31bc5b212645a2fd2f768c651cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 27810571}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb7fb31bc5b212645a2fd2f768c651cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 27810573}
   m_SourcePrefab: {fileID: 100100000, guid: fb7fb31bc5b212645a2fd2f768c651cf, type: 3}
 --- !u!1 &27810567 stripped
 GameObject:
@@ -421,6 +424,19 @@ MonoBehaviour:
   - {fileID: 27810570}
   behavior: 0
   selfDestroy: 1
+--- !u!114 &27810573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27810567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c053ba2b390aa0d44b41eba33bf88b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  manager: {fileID: 921129759}
 --- !u!1 &72517032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,6 +4089,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 713315959}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 713315963}
   m_SourcePrefab: {fileID: 100100000, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
 --- !u!1 &713315950 stripped
 GameObject:
@@ -4119,6 +4138,19 @@ MonoBehaviour:
   - {fileID: 713315955}
   behavior: 0
   selfDestroy: 1
+--- !u!114 &713315963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713315950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c053ba2b390aa0d44b41eba33bf88b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  manager: {fileID: 921129759}
 --- !u!1 &794377221
 GameObject:
   m_ObjectHideFlags: 0
