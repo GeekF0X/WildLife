@@ -14,24 +14,21 @@ public class DataManager : MonoBehaviour
     {
         level = SceneManager.GetActiveScene().name;
         checkpointIndex = Global.saveScene.checkpoint;
-        for(int i = 0; i < checkpointIndex; i++)
+        for (int i = 0; i < checkpointIndex; i++)
         {
             levelCheckpoints[i].gameObject.SetActive(false);
             levelCheckpoints[i].puzzle.SetActive(false);
         }
         if (small)
         {
-            small.controller.enabled = false;
-            small.transform.position = Global.saveScene.small.position;
-            small.transform.rotation = Global.saveScene.small.rotation;
-            small.controller.enabled = true;
+            RobotDataAdapter robot = new(Global.saveScene.small);
+            Debug.Log(robot.position);
+            robot.LoadRobot(ref small);
         }
         if (big)
         {
-            big.controller.enabled = false;
-            big.transform.position = Global.saveScene.big.position;
-            big.transform.rotation = Global.saveScene.big.rotation;
-            big.controller.enabled = true;
+            RobotDataAdapter robot = new(Global.saveScene.big);
+            robot.LoadRobot(ref big);
         }
     }
 
@@ -52,7 +49,7 @@ public class DataManager : MonoBehaviour
     public void LoadGame()
     {
         SaveData data = SaveManager.Load();
-
+        Debug.Log(data.sceneData);
         Global.saveScene = data.sceneData;
 
         SceneManager.LoadScene(level);
