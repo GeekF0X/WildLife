@@ -10,7 +10,7 @@ public class DataManager : MonoBehaviour
 #nullable enable
     public Robot? small, big;
 
-    private void OnEnable()
+    private void Awake()
     {
         if (SaveManager.Load() == null)
         {
@@ -20,6 +20,8 @@ public class DataManager : MonoBehaviour
             data.sceneData.level = SceneManager.GetActiveScene().name;
             data.sceneData.small = new RobotDataAdapter(small);
             data.sceneData.big = new RobotDataAdapter(big);
+            data.achievDava.achievName = new List<string>();
+            data.achievDava.achievValue = new List<bool>();
             SaveManager.Save(data);
         }
         else
@@ -57,15 +59,20 @@ public class DataManager : MonoBehaviour
 
         SaveManager.Save(data);
     }
-    public void SaveItempego(GameObject obj)
+    public void AddachiveList(GameObject obj)
     {
         SaveData data = SaveManager.Load();
 
         data.achievDava.achievName.Add(obj.name);
-        data.achievDava.achievValue.Add(true);
+        data.achievDava.achievValue.Add(false);
         SaveManager.Save(data);
     }
-
+    public void concluiuachive(int i)
+    {
+        SaveData data = SaveManager.Load();
+        data.achievDava.achievValue[i] = true;
+        SaveManager.Save(data);
+    }
     public void LoadGame()
     {
         SaveData data = SaveManager.Load();
