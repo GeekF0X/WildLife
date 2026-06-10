@@ -45,6 +45,7 @@ public class RobotBig : Robot
             trajectoryLine.enabled = false;
             trajectoryLine.positionCount = 0;
         }
+        
     }
 
     
@@ -264,4 +265,19 @@ public class RobotBig : Robot
         Gizmos.DrawLine(detectionOrigin.position,
                         detectionOrigin.position + detectionOrigin.forward * pickupRange);
     }
-}
+    protected override void Efeitotrocar()
+    {
+        if (_valorAtual > 0f)
+        {
+            _valorAtual -= Time.deltaTime * velocidade;
+            _valorAtual = Mathf.Max(_valorAtual, 0f);
+            ren.material.SetFloat("_time", _valorAtual);
+            if (_valorAtual <= 0f)
+            {
+                tocarefito = false;
+                _valorAtual = 2.2f;
+                ren.material.SetFloat("_direfeito", -1);
+            }
+        }
+    }
+    }
