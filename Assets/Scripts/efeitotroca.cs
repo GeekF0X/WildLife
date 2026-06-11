@@ -3,13 +3,14 @@ using UnityEngine;
 public class efeitotroca : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-    public Transform Pfinal;
+    Transform Pfinal;
     public int divisoesdoline = 10;
     public float alturamax=0;
     Vector3 inicio, fim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Pfinal = GameObject.Find("Robot2").transform;
         lineRenderer.positionCount = divisoesdoline;
         inicio = transform.position*2;
         fim = Pfinal.position*2;

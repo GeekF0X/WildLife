@@ -166,7 +166,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162931523431425453}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -341,6 +341,11 @@ MonoBehaviour:
   fall: 0
   other: {fileID: 0}
   cineCamera: {fileID: 637913553550606410}
+  aimCamera: {fileID: 7160454598208455334}
+  ren: {fileID: 0}
+  velocidade: 1
+  _valorAtual: 2.2
+  tocarefito: 0
   currentState: 0
   detectionOrigin: {fileID: 8097320232865421360}
   pickupRange: 1
@@ -349,9 +354,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   holdPoint: {fileID: 3103145815947971751}
-  aimCamera: {fileID: 7160454598208455334}
-  aimPriority: 20
-  idlePriority: 0
   throwOrigin: {fileID: 7611191299700780814}
   throwSpeed: 9.05
   maxPitch: 65.5
@@ -361,7 +363,7 @@ MonoBehaviour:
   trajectoryTimeStep: 0.05
   trajectoryCollisionMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 499
   animations: {fileID: 5490675405090480926}
   animator: {fileID: 0}
   throwAnimDelay: 0.15
@@ -432,8 +434,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7735552273046149041}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.032135583, y: 0.08124424, z: -0.0026208616, w: 0.9961726}
-  m_LocalPosition: {x: 0, y: 1.5, z: -5}
+  m_LocalRotation: {x: -0.007298042, y: 0.5965284, z: 0.005424636, w: 0.8025405}
+  m_LocalPosition: {x: -4.5258064, y: 1.0675964, z: -2.215828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -985,6 +987,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -4825055136811793210, guid: c0b182706145d1a4099d0cde13d9c275, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 737b929ef25255a44bd3de1f6ff0f9cb, type: 2}
     - target: {fileID: -4477009696898816313, guid: c0b182706145d1a4099d0cde13d9c275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -9.8597156e-14
