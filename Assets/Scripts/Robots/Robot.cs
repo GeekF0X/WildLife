@@ -1,7 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
-
+using System.Collections;
 public abstract class Robot : MonoBehaviour
 {
     public CharacterController controller;
@@ -18,8 +18,15 @@ public abstract class Robot : MonoBehaviour
     protected Transform lastCameraLook = null;
     protected UnityAction Move;
 
+    //efeitotroca
+    public Renderer ren;
+    [SerializeField] 
+    public float velocidade = 1.0f;
+    public float _valorAtual = 0.0f;
+    public bool tocarefito = false;
     public void Change()
     {
+        AtivarEfeitotroca();
         CinemachineBrain brain = Camera.main.GetComponent<CinemachineBrain>();
         brain.DefaultBlend.Time = 2;
         lastCameraLook = cineCamera.transform;
@@ -49,12 +56,22 @@ public abstract class Robot : MonoBehaviour
         brain.DefaultBlend.Time = 0.5f;
         other.isEnergized = true;
     }
-
+    void AtivarEfeitotroca()
+    {
+        tocarefito = true;
+        ren.material.SetFloat("_direfeito", -1);
+    }
+   
     protected void FixedUpdate()
     {
         Move();
         Fall();
-    }
+        Debug.Log(_valorAtual);
+        if (tocarefito)
+        {
+            Efeitotrocar();
+        }
+        }
 
     protected void Start()
     {
@@ -104,5 +121,6 @@ public abstract class Robot : MonoBehaviour
     public abstract void Aim(bool shouldAim);
     protected abstract void EnterAim();
     protected abstract void ExitAim();
+    protected abstract void Efeitotrocar();
 
 }

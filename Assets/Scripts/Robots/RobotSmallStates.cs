@@ -11,7 +11,6 @@ public class RobotSmallIdle : IStates
     public void Exit() { }
 
     public string GetName() { return "Idle"; }
-
 }
 
 public class RobotSmallShoot : IStates

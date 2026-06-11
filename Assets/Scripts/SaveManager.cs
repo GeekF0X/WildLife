@@ -14,9 +14,16 @@ public class SaveManager : MonoBehaviour
 
     public static SaveData Load()
     {
-        string data = File.ReadAllText(path);
-        SaveData save = JsonUtility.FromJson<SaveData>(data);
+        if (File.Exists(path))
+        {
+            string data = File.ReadAllText(path);
+            SaveData save = JsonUtility.FromJson<SaveData>(data);
 
-        return save;
+            return save;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
