@@ -21,7 +21,12 @@ public class Global
     public static void LoadScene(string levelName)
     {
         FromStar = true;
-        saveScene = new();
+
+        SaveData data = new();
+        data.sceneData = new();
+        data.achievDava = achievment;
+        SaveManager.Save(data);
+
         SceneManager.LoadScene(levelName);
     }
 
