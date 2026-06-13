@@ -21,6 +21,7 @@ public class Global
     public static void LoadScene(string levelName)
     {
         FromStar = true;
+        saveScene = new();
         SceneManager.LoadScene(levelName);
     }
 
