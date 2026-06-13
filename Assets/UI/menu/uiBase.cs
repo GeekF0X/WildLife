@@ -7,9 +7,9 @@ public class uiBase : MonoBehaviour
 {
     public GameObject configuracao, principal, play, pause;
 
-    public void Sandbox()
+    public void Creditos()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Sandbox");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Creditos");
     }
 
     public void Play()
