@@ -5,7 +5,13 @@ public class GameOverUI : MonoBehaviour
     public void OnRestartButton()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.RestartLevel();
+            GameManager.Instance.RestartLevel(false);
+    }
+
+    public void OnRestartLevelButton()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.RestartLevel(true);
     }
 
     public void OnQuitButton()

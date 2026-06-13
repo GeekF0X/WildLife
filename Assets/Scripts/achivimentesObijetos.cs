@@ -6,29 +6,30 @@ public class achivimentesObijetos : MonoBehaviour
 {
     public DataManager manager;
     int i = 0;
-    SaveData data;
+    AchievData data;
 
     
     private void Start()
     {
-        data = SaveManager.Load();
-        if (data.achievDava.achievName.Contains(this.gameObject.name))
+        data = Global.achievment;
+        if (data.achievName.Contains(this.gameObject.name))
         {
-            this.i = data.achievDava.achievName.IndexOf(this.gameObject.name);
-            this.gameObject.SetActive(!data.achievDava.achievValue[i]);
-            Debug.Log(data.achievDava.achievValue[this.i]);
+            this.i = data.achievName.IndexOf(this.gameObject.name);
+            this.gameObject.SetActive(!data.achievValue[i]);
+            Debug.Log(data.achievValue[this.i]);
         }
         else
         {
             manager.AddachiveList(this.gameObject);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             Debug.Log(this.i + "  " + "pegouI");
-            manager.concluiuachive(this.i);
+            manager.SaveAchievment(this.i);
         }
     }
 }
