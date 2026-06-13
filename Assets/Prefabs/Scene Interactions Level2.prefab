@@ -2267,6 +2267,7 @@ MonoBehaviour:
   smallPosition: {fileID: 8842400350809300694}
   bigPosition: {fileID: 5893311401931291199}
   condition: 1
+  selfIndex: 1
   manager: {fileID: 0}
 --- !u!54 &2393457444984028631
 Rigidbody:
@@ -4229,7 +4230,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 838
+  m_VersionIndex: 847
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
