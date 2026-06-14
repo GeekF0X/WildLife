@@ -2,7 +2,7 @@ using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class achivimentesObijetos : MonoBehaviour
+public class AchievementObjects : MonoBehaviour
 {
     public DataManager manager;
     int i = 0;
