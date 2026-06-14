@@ -8,7 +8,9 @@ public class AchievementObjects : MonoBehaviour
     int i = 0;
     AchievData data;
 
-    
+    public DialogType firstDialog;
+    public DialogType secondDialog;
+
     private void Start()
     {
         data = Global.achievment;
@@ -30,6 +32,11 @@ public class AchievementObjects : MonoBehaviour
         {
             Debug.Log(this.i + "  " + "pegouI");
             manager.SaveAchievment(this.i);
+
+            if (DialogUI.Instance != null)
+            {
+                DialogUI.Instance.Show(firstDialog, secondDialog);
+            }
         }
     }
 }
