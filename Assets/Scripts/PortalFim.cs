@@ -5,6 +5,6 @@ public class PortalFim : MonoBehaviour
 {
     private void OnDestroy()
     {
-        SceneManager.LoadScene("blocagem");
+        SceneManager.LoadScene("StoryRobot2");
     }
 }

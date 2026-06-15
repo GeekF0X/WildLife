@@ -624,6 +624,7 @@ GameObject:
   - component: {fileID: 516242423}
   - component: {fileID: 516242422}
   - component: {fileID: 516242421}
+  - component: {fileID: 516242425}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -720,6 +721,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &516242425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516242420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d73f05aca2e68a44aff0f36eab42a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buttons
 --- !u!1 &653874434
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +919,7 @@ MonoBehaviour:
   - {fileID: 61009394}
   - {fileID: 1730159314}
   button: {fileID: 1772372948}
-  delay: 1.5
+  delay: 1
   fade: 0.8
 --- !u!4 &1464097588
 Transform:
@@ -1108,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.721, y: 0.5}
   m_AnchorMax: {x: 0.99600005, y: 0.66151834}
-  m_AnchoredPosition: {x: 0, y: -1.4903}
+  m_AnchoredPosition: {x: 0, y: -1.490303}
   m_SizeDelta: {x: 0.8233, y: 2.9806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772372948
@@ -1154,7 +1167,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1772372949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 516242425}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: Seguindo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1772372949
 MonoBehaviour:
   m_ObjectHideFlags: 0

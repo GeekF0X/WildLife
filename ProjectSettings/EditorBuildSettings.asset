@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryRobot2.unity
     guid: 3ee8b8048e4455b40974fde2a1f4f7df
   - enabled: 1
+    path: Assets/Scenes/Blocagem2.unity
+    guid: 9c26f61cc68ea834f84ad84d5471203d
+  - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: bcf1d5311ee483d44ba28dfa7c97bb65
   - enabled: 1

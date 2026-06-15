@@ -725,7 +725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40083787, y: 0.14}
   m_AnchorMax: {x: 0.6248922, y: 0.29531652}
-  m_AnchoredPosition: {x: -0.5000076, y: -0.1000061}
+  m_AnchoredPosition: {x: -0.5, y: -0.1000061}
   m_SizeDelta: {x: 1.1380997, y: 0.44860077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610152141
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   - {fileID: 1730159314}
   - {fileID: 1426026778}
   button: {fileID: 610152141}
-  delay: 1.5
+  delay: 1
   fade: 0.8
 --- !u!4 &1304981133
 Transform:

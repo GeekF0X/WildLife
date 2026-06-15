@@ -10,6 +10,11 @@ public class Buttons : MonoBehaviour
 
     public void Jogar()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Blocagem2");
+    }
+
+    public void Seguindo()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Blocagem");
     }
 }
