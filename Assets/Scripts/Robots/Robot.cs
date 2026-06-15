@@ -16,7 +16,7 @@ public abstract class Robot : MonoBehaviour
     public CinemachineCamera aimCamera;
 
     protected Transform lastCameraLook = null;
-    protected UnityAction Move;
+    public UnityAction Move;
 
     //efeitotroca
     public Renderer ren;
@@ -66,7 +66,7 @@ public abstract class Robot : MonoBehaviour
     {
         Move();
         Fall();
-        Debug.Log(_valorAtual);
+
         if (tocarefito)
         {
             Efeitotrocar();
@@ -85,7 +85,7 @@ public abstract class Robot : MonoBehaviour
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
-    protected void BaseMove()
+    public void BaseMove()
     {
         if (isEnergized)
         {
