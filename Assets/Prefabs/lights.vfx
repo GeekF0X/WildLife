@@ -193,7 +193,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 55.8
+      m_SerializableObject: 50.2
     m_Space: -1
   m_Property:
     name: Rate
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.33
+      m_SerializableObject: 3.43
     m_Space: -1
   m_Property:
     name: B
@@ -1511,7 +1511,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.65
+      m_SerializableObject: 0.22
     m_Space: -1
   m_Property:
     name: MaxSpeed
@@ -1569,7 +1569,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.0,"y":-0.3700000047683716,"z":0.0}}'
+      m_SerializableObject: '{"vector":{"x":0.0,"y":-0.09000000357627869,"z":0.0}}'
     m_Space: 1
   m_Property:
     name: Force
