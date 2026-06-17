@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public enum DialogType
+{
+    Option1,
+    Option2,
+    Option3,
+    Option4,
+    Option5,
+    Option6
+}

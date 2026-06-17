@@ -19,6 +19,8 @@ public class WaterHazard : MonoBehaviour
         if (shortCircuitVFX != null)
             Instantiate(shortCircuitVFX, robot.transform.position, Quaternion.identity);
 
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayShortCircuit();
         robot.gameObject.SetActive(false);
 
         if (GameManager.Instance != null)
@@ -27,6 +29,21 @@ public class WaterHazard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) => HandleTrigger(other);
 
-    public void StopWater()  { isActive = false; }
-    public void StartWater() { isActive = true; }
+    public void StopWater()
+    {
+        isActive = false;
+        Collider[] allColliders = GetComponentsInChildren<Collider>();
+        foreach (var col in allColliders)
+            col.enabled = false;
+
+        Debug.Log("[WaterHazard] Água parada — colliders desativados.");
+    }
+
+    public void StartWater()
+    {
+        isActive = true;
+        Collider[] allColliders = GetComponentsInChildren<Collider>();
+        foreach (var col in allColliders)
+            col.enabled = true;
+    }
 }

@@ -24,7 +24,10 @@ public class RobotSmallShoot : IStates
     {
         SearchTarget();
         player.isEnergized = false;
+        RobotAudio audio = player.GetComponent<RobotAudio>();
+        if (audio != null) audio.PlayHookShot();
     }
+
     public void Update() 
     {
         Shoot();
@@ -45,6 +48,7 @@ public class RobotSmallShoot : IStates
             }
         }
     }
+
     public void Exit() { player.magnet.rb.linearVelocity = Vector3.zero; }
 
     void SearchTarget()
@@ -70,13 +74,13 @@ public class RobotSmallShoot : IStates
             directionMagnet = Vector3.zero;
         }
     }
+
     void Shoot()
     { 
         player.magnet.rb.linearVelocity = directionMagnet * player.magnet.magnetSpeed;
     }
 
     public string GetName() { return "Shoot"; }
-
 }
 
 public class RobotSmallPullObj : IStates
@@ -85,7 +89,13 @@ public class RobotSmallPullObj : IStates
 
     public RobotSmallPullObj(RobotSmall player) { this.player = player; }
 
-    public void Enter() { player.magnet.rb.linearVelocity = Vector3.zero; }
+    public void Enter() 
+    { 
+        player.magnet.rb.linearVelocity = Vector3.zero;
+        RobotAudio audio = player.GetComponent<RobotAudio>();
+        if (audio != null) audio.PlayHookAttach();
+    }
+
     public void Update() 
     {
         float distanceToPlayer = Vector3.Distance(player.magnet.gameObject.transform.localPosition, player.magnetStart);
@@ -99,7 +109,6 @@ public class RobotSmallPullObj : IStates
     public void Exit() { }
 
     public string GetName() { return "PullObj"; }
-
 }
 
 public class RobotSmallPullSelf : IStates
@@ -134,7 +143,6 @@ public class RobotSmallPullSelf : IStates
     }
 
     public string GetName() { return "PullSelf"; }
-
 }
 
 public class RobotSmallInertial : IStates
@@ -157,13 +165,11 @@ public class RobotSmallInertial : IStates
 
         Vector3 move = player.directionFall * player.magnet.playerPullSpeed/1.1f * Time.deltaTime;
         player.controller.Move(move);
-        
     }
         
     public void Exit() { player.isEnergized = true; }
 
     public string GetName() { return "Inertial"; }
-
 }
 
 public class RobotSmallRetract : IStates
@@ -188,5 +194,4 @@ public class RobotSmallRetract : IStates
     }
 
     public string GetName() { return "Retract"; }
-
 }

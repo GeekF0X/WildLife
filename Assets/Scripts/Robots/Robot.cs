@@ -2,6 +2,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+
 public abstract class Robot : MonoBehaviour
 {
     public CharacterController controller;
@@ -18,12 +19,14 @@ public abstract class Robot : MonoBehaviour
     protected Transform lastCameraLook = null;
     protected UnityAction Move;
 
-    //efeitotroca
     public Renderer ren;
     [SerializeField] 
     public float velocidade = 1.0f;
     public float _valorAtual = 0.0f;
     public bool tocarefito = false;
+
+    protected RobotAudio robotAudio;
+
     public void Change()
     {
         AtivarEfeitotroca();
@@ -41,6 +44,8 @@ public abstract class Robot : MonoBehaviour
         cineCamera.enabled = false;
         ExitAim();
 
+        if (robotAudio != null) robotAudio.StopMovementSound();
+
         other.cineCamera.enabled = true;
         if (other.TryGetComponent<RobotAnimations>(out RobotAnimations otherAnimations))
             otherAnimations.Invoke("TurnOn", 1.3f);
@@ -56,6 +61,7 @@ public abstract class Robot : MonoBehaviour
         brain.DefaultBlend.Time = 0.5f;
         other.isEnergized = true;
     }
+
     void AtivarEfeitotroca()
     {
         tocarefito = true;
@@ -66,16 +72,31 @@ public abstract class Robot : MonoBehaviour
     {
         Move();
         Fall();
-        Debug.Log(_valorAtual);
+        HandleMovementSound();
+
         if (tocarefito)
         {
             Efeitotrocar();
         }
-        }
+    }
 
     protected void Start()
     {
         Move = BaseMove;
+        robotAudio = GetComponent<RobotAudio>();
+    }
+
+    private void HandleMovementSound()
+    {
+        if (robotAudio == null) return;
+        bool isMoving = isEnergized 
+                        && moveDirection.sqrMagnitude > 0.01f 
+                        && controller.isGrounded;
+
+        if (isMoving)
+            robotAudio.StartMovementSound();
+        else
+            robotAudio.StopMovementSound();
     }
 
     public void MoveInput(Vector2 input)
@@ -85,6 +106,7 @@ public abstract class Robot : MonoBehaviour
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
+
     protected void BaseMove()
     {
         if (isEnergized)
@@ -122,5 +144,4 @@ public abstract class Robot : MonoBehaviour
     protected abstract void EnterAim();
     protected abstract void ExitAim();
     protected abstract void Efeitotrocar();
-
 }
