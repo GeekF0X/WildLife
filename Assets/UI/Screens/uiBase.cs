@@ -17,6 +17,10 @@ public class uiBase : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Controles");
     }
 
+    public void Continue()
+    {
+        Global.LoadCheckpoint();
+    }
     public void config()
     {
         principal.SetActive(false);
