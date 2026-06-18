@@ -17,7 +17,7 @@ public abstract class Robot : MonoBehaviour
     public CinemachineCamera aimCamera;
 
     protected Transform lastCameraLook = null;
-    protected UnityAction Move;
+    public UnityAction Move;
 
     public Renderer ren;
     [SerializeField] 
@@ -106,8 +106,7 @@ public abstract class Robot : MonoBehaviour
             moveDirection = new Vector3(input.x, 0, input.y);
         }
     }
-
-    protected void BaseMove()
+    public void BaseMove()
     {
         if (isEnergized)
         {
