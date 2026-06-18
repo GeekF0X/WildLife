@@ -7,9 +7,6 @@ public class SaveManager : MonoBehaviour
 
     public static void Save(SaveData save)
     {
-        Global.saveScene = save.sceneData;
-        Global.achievment = save.achievDava;
-
         Debug.Log("salvando em: " + path);
         string data = JsonUtility.ToJson(save);
         File.WriteAllText(path, data);
@@ -26,7 +23,6 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            File.WriteAllText(path, "");
             return null;
         }
     }

@@ -103,36 +103,12 @@ public class RobotSmallPullObj : IStates
             if (player.magnet.pullself)
                 player.ChangeState(new RobotSmallPullSelf(player));
 
-        if (distanceToPlayer < 0.5f)
-            player.ChangeState(new RobotSmallCarrying(player));
+        if (distanceToPlayer < 1.5f)
+            player.ChangeState(new RobotSmallRetract(player));
     }
     public void Exit() { }
 
     public string GetName() { return "PullObj"; }
-}
-
-public class RobotSmallCarrying : IStates
-{
-    RobotSmall player;
-
-    public RobotSmallCarrying(RobotSmall player) { this.player = player; }
-
-    public void Enter() { player.isEnergized = true; }
-    public void Update()
-    { }
-    public void Exit() 
-    {
-        if (player.aimCamera != null)
-        {
-            if (!player.aimCamera.gameObject.activeSelf)
-            {
-                player.Move = player.BaseMove;
-            }
-        }
-    }
-
-    public string GetName() { return "Carrying"; }
-
 }
 
 public class RobotSmallPullSelf : IStates

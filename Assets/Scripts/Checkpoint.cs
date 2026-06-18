@@ -6,8 +6,6 @@ public class Checkpoint : MonoBehaviour
     public Transform smallPosition, bigPosition;
     public bool condition = true;
 
-    public int selfIndex;
-
     public DataManager manager;
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +14,7 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.Log("Passei");
 
-            manager.checkpointIndex = selfIndex;
+            manager.checkpointIndex++;
             manager.SaveCheckpoint(this);
             Destroy(GetComponent<Collider>());
         }

@@ -5,9 +5,8 @@ public class RobotManager : MonoBehaviour
 {
     public enum RobotType { SMALL, BIG}
     public Robot small;
-#nullable enable
-    public Robot? big;
-#nullable disable
+    public Robot big;
+
     Robot controlledRobot;
     RobotType robot = RobotType.SMALL;
     bool action = false;
@@ -17,16 +16,13 @@ public class RobotManager : MonoBehaviour
         small.isEnergized = true;
         small.cineCamera.enabled = true;
 
-        if (big)
-        {
-            big.isEnergized = false;
-            big.cineCamera.enabled = false;
-        }
+        big.isEnergized = false;
+        big.cineCamera.enabled = false;
     }
 
     public void OnChange(InputAction.CallbackContext context)
     {
-        if (context.performed && big)
+        if (context.performed)
         {
             controlledRobot.Change();
 

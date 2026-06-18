@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
+    string level;
     public List<Checkpoint> levelCheckpoints;
     public int checkpointIndex;
 #nullable enable
@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Global.saveScene == null || Global.FromStar)
+        if (SaveManager.Load() == null)
         {
             SaveData data = new();
             data.sceneData = new();
@@ -26,9 +26,12 @@ public class DataManager : MonoBehaviour
         }
         else
         {
+            LoadGame();
+            level = SceneManager.GetActiveScene().name;
             checkpointIndex = Global.saveScene.checkpoint;
             for (int i = 0; i < checkpointIndex; i++)
             {
+                Debug.Log(checkpointIndex);
                 levelCheckpoints[i].gameObject.SetActive(false);
                 levelCheckpoints[i].puzzle.SetActive(false);
             }
@@ -47,9 +50,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveCheckpoint(Checkpoint checkpoint)
     {
-        SaveData data = new();
-        data.sceneData = Global.saveScene;
-        data.achievDava = Global.achievment;
+        SaveData data = SaveManager.Load();
 
         data.sceneData.level = SceneManager.GetActiveScene().name;
         data.sceneData.checkpoint = checkpointIndex;
@@ -58,7 +59,6 @@ public class DataManager : MonoBehaviour
 
         SaveManager.Save(data);
     }
-
     public void AddachiveList(GameObject obj)
     {
         SaveData data = SaveManager.Load();
@@ -67,15 +67,20 @@ public class DataManager : MonoBehaviour
         data.achievDava.achievValue.Add(false);
         SaveManager.Save(data);
     }
-
-    public void SaveAchievment(int i)
+    public void concluiuachive(int i)
     {
-        SaveData data = new();
-        data.sceneData = Global.saveScene;
-        data.achievDava = Global.achievment;
-
+        SaveData data = SaveManager.Load();
         data.achievDava.achievValue[i] = true;
         SaveManager.Save(data);
+    }
+    public void LoadGame()
+    {
+        SaveData data = SaveManager.Load();
+        
+        Global.saveScene = data.sceneData;
+
+        //SceneManager.LoadScene(data.sceneData.level);
+        
     }
 
 }
