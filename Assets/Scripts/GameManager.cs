@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (waterFailText != null) waterFailText.SetActive(false);
         if (fallFailText != null) fallFailText.SetActive(false);
+
+        DontDestroyOnLoad(Instance);
     }
 
     public enum FailReason { Water, Fall }
@@ -47,10 +49,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void RestartLevel()
+
+    public void RestartLevel(bool fromStart)
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        if (fromStart)
+            Global.LoadScene(SceneManager.GetActiveScene().name);
+        else
+            Global.LoadCheckpoint();
     }
 
     public void QuitToMenu()
