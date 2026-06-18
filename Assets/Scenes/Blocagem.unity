@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 203503869}
   - component: {fileID: 203503868}
   m_Layer: 5
-  m_Name: Sprite4
+  m_Name: Sprite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f701bd2b134bcda43bc70c423b432872, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb494279790d8b047b089dd26c99d0b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1861,7 +1861,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 2000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1887,8 +1887,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.025248248, y: 0.05890322, z: -0.001490268, w: 0.9979433}
-  m_LocalPosition: {x: -27.785017, y: 33.403027, z: -19.022367}
+  m_LocalRotation: {x: 0.025935333, y: 0.030667251, z: -0.0007960079, w: 0.99919283}
+  m_LocalPosition: {x: -25.720001, y: 34.02897, z: -19.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2055,19 +2055,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9979072
+      value: 0.99919283
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.025901964
+      value: 0.025935335
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.059228476
+      value: 0.030667251
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0015373512
+      value: -0.000796008
       objectReference: {fileID: 0}
     - target: {fileID: 1320661634641792502, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2950,19 +2950,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9979433
+      value: 0.9991918
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.025248246
+      value: 0.02527982
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.058903217
+      value: 0.031241858
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0014902682
+      value: -0.0007904272
       objectReference: {fileID: 0}
     - target: {fileID: 7765910114578575336, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: other
@@ -3844,7 +3844,7 @@ GameObject:
   - component: {fileID: 554606816}
   - component: {fileID: 554606815}
   m_Layer: 5
-  m_Name: Sprite6
+  m_Name: Sprite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3889,7 +3889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4645f961b0dc0424cbc94655994e63aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cce149aea25c1d438d14515e5f328ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5478,7 +5478,7 @@ GameObject:
   - component: {fileID: 837656894}
   - component: {fileID: 837656893}
   m_Layer: 5
-  m_Name: Sprite2
+  m_Name: Sprite6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5523,7 +5523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cce149aea25c1d438d14515e5f328ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4645f961b0dc0424cbc94655994e63aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11534,7 +11534,7 @@ GameObject:
   - component: {fileID: 1096328594}
   - component: {fileID: 1096328593}
   m_Layer: 5
-  m_Name: Sprite6
+  m_Name: Sprite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11579,7 +11579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4645f961b0dc0424cbc94655994e63aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cce149aea25c1d438d14515e5f328ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12796,7 +12796,7 @@ GameObject:
   - component: {fileID: 1451397135}
   - component: {fileID: 1451397134}
   m_Layer: 5
-  m_Name: Sprite1
+  m_Name: Sprite4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12841,7 +12841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb494279790d8b047b089dd26c99d0b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f701bd2b134bcda43bc70c423b432872, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14268,7 +14268,7 @@ GameObject:
   - component: {fileID: 1554814611}
   - component: {fileID: 1554814610}
   m_Layer: 5
-  m_Name: Sprite1
+  m_Name: Sprite4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14313,7 +14313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb494279790d8b047b089dd26c99d0b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f701bd2b134bcda43bc70c423b432872, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
