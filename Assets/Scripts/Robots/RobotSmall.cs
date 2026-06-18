@@ -72,9 +72,9 @@ public class RobotSmall:Robot
             if (aimCamera.gameObject.activeSelf)
             {
                 aimCamera.gameObject.SetActive(false);
-                Move = BaseMove;
+                if(state.GetName() != "Carrying")
+                    Move = BaseMove;
             }
-
         }
     }
     void AimMove()
@@ -105,7 +105,7 @@ public class RobotSmall:Robot
     private void Update()
     {
         state.Update();
-        if(state.GetName() != "Idle" && isEnergized)
+        if((state.GetName() != "Idle" && state.GetName() != "Carrying") && isEnergized)
         {
             isEnergized = false;
         }

@@ -27,7 +27,6 @@ public class efeitotroca : MonoBehaviour
             for (int i = 0; i < divisoesdoline; i++)
             {
                 float t = i / (float)(divisoesdoline - 1);
-                Debug.Log(t+"  "+ i);
                 Vector3 pontoLinear = Vector3.Lerp(inicio, fim, t);
                 float altura = 4 * alturamax * t * (1 - t);
                 Vector3 pontoFinal = pontoLinear + Vector3.up * altura;
