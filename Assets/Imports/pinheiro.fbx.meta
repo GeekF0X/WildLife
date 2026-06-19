@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: madeira
-    second: {fileID: 2100000, guid: 08dc6e35f66c9984895496da811d8e24, type: 2}
+    second: {fileID: 2100000, guid: 96c2de63002c8ef4b9d192c8d80e88dd, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
