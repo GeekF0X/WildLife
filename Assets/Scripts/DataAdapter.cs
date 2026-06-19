@@ -11,8 +11,8 @@ public class RobotDataAdapter : RobotData
 
     public RobotDataAdapter(Robot robot)
     {
-        //this.position = robot.transform.position;
-        //this.rotation = robot.transform.rotation;
+        this.position = robot.transform.position;
+        this.rotation = robot.transform.rotation;
     }
 
     public RobotDataAdapter(Transform transform)
