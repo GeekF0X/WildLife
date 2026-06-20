@@ -26,6 +26,7 @@ public abstract class Robot : MonoBehaviour
     public bool tocarefito = false;
 
     protected RobotAudio robotAudio;
+    public RobotAnimations animations;
 
     public void Change()
     {
@@ -78,6 +79,8 @@ public abstract class Robot : MonoBehaviour
         {
             Efeitotrocar();
         }
+
+        animations.SetMoving(moveDirection.magnitude > 0);
     }
 
     protected void Start()

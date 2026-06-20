@@ -69,10 +69,10 @@ public class RobotSmallShoot : IStates
         {
             directionMagnet = rayTarget.direction;
         }
-        if (player.magnet.colliding > 0)
-        {
-            directionMagnet = Vector3.zero;
-        }
+        //if (player.magnet.colliding > 0)
+        //{
+        //    directionMagnet = Vector3.zero;
+        //}
     }
 
     void Shoot()
