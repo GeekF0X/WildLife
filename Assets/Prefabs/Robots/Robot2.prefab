@@ -346,6 +346,7 @@ MonoBehaviour:
   velocidade: 1
   _valorAtual: 2.2
   tocarefito: 0
+  animations: {fileID: 5490675405090480926}
   currentState: 0
   detectionOrigin: {fileID: 8097320232865421360}
   pickupRange: 1
@@ -364,7 +365,6 @@ MonoBehaviour:
   trajectoryCollisionMask:
     serializedVersion: 2
     m_Bits: 499
-  animations: {fileID: 5490675405090480926}
   animator: {fileID: 0}
   throwAnimDelay: 0.15
 --- !u!114 &5490675405090480926
@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 8450950371129415844}
   - component: {fileID: 1566805073447698195}
   - component: {fileID: 8095613540554561992}
+  - component: {fileID: 1640550499758786742}
   m_Layer: 8
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -434,8 +435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7735552273046149041}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.007298042, y: 0.5965284, z: 0.005424636, w: 0.8025405}
-  m_LocalPosition: {x: -4.5258064, y: 1.0675964, z: -2.215828}
+  m_LocalRotation: {x: -0.014724047, y: -0.83388656, z: -0.022271747, w: 0.55128974}
+  m_LocalPosition: {x: 4.2194138, y: 0.87602615, z: 2.6764832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -645,6 +646,36 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!114 &1640550499758786742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735552273046149041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDecollider
+  CameraRadius: 0.3
+  Decollision:
+    Enabled: 0
+    ObstacleLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Damping: 0.5
+    SmoothingTime: 0
+  TerrainResolution:
+    Enabled: 1
+    TerrainLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    MaximumRaycast: 10
+    Damping: 0.5
 --- !u!1 &8858496528040284675
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &505745369446651466
 Transform:
   m_ObjectHideFlags: 0
@@ -673,7 +704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8858496528040284675}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02590197, y: 0.059213564, z: -0.0015369634, w: 0.9979081}
+  m_LocalRotation: {x: 0.025902113, y: 0.05914102, z: -0.0015350822, w: 0.99791235}
   m_LocalPosition: {x: 0.47999954, y: 0.8189697, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -696,7 +727,7 @@ MonoBehaviour:
     Enabled: 1
     m_Value: 2
   OutputChannel: 1
-  StandbyUpdate: 2
+  StandbyUpdate: 1
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:

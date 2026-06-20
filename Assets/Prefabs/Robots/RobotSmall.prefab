@@ -187,8 +187,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014224802238328144}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01981801, y: 0.057853427, z: -0.0011486902, w: 0.99812776}
-  m_LocalPosition: {x: 0.39913267, y: 0.28000003, z: -0.9940272}
+  m_LocalRotation: {x: 0.019817263, y: 0.057924364, z: -0.0011500603, w: 0.99812365}
+  m_LocalPosition: {x: 0.39913368, y: 0.27999878, z: -0.9940281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1095,6 +1095,7 @@ GameObject:
   - component: {fileID: 5130195850873043484}
   - component: {fileID: 2101869786318957157}
   - component: {fileID: 7935550555845067373}
+  - component: {fileID: 1725105858548095078}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -1110,7 +1111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027977058262196461}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.054270107, y: 0.08117516, z: -0.0044265823, w: 0.9952114}
+  m_LocalRotation: {x: 0.05427011, y: 0.081175156, z: -0.0044265813, w: 0.9952114}
   m_LocalPosition: {x: 0, y: 1.3600001, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1321,6 +1322,36 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!114 &1725105858548095078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7027977058262196461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDecollider
+  CameraRadius: 0.3
+  Decollision:
+    Enabled: 0
+    ObstacleLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Damping: 0.5
+    SmoothingTime: 0
+  TerrainResolution:
+    Enabled: 1
+    TerrainLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    MaximumRaycast: 10
+    Damping: 0.5
 --- !u!1 &9067494353688069623
 GameObject:
   m_ObjectHideFlags: 0
