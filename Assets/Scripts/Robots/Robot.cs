@@ -87,6 +87,7 @@ public abstract class Robot : MonoBehaviour
     {
         Move = BaseMove;
         robotAudio = GetComponent<RobotAudio>();
+
         if (isEnergized)
         {
             animations.TurnOn();

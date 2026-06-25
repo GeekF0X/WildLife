@@ -11,7 +11,7 @@ public class RobotManager : MonoBehaviour
     Robot controlledRobot;
     RobotType robot = RobotType.SMALL;
     bool action = false;
-    private void Start()
+    private void OnEnable()
     {
         controlledRobot = small;
         small.isEnergized = true;
