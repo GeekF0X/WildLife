@@ -22,6 +22,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: mesaalavanca
+    second: {fileID: 2100000, guid: 981db21bb74ee0a4baebad9c06f83ff1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: terreno
     second: {fileID: 2100000, guid: c12e0c8f46e97c5418d7a94d87463849, type: 2}
   materials:
