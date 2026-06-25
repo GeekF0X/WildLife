@@ -93,8 +93,9 @@ public class RobotSmall:Robot
         }
     }
 
-    public void ResetTransform()
+    public void ResetTransform(bool freezeHook = true)
     {
+        magnet.rb.isKinematic = freezeHook;
         transform.rotation = Quaternion.identity;
         magnet.hookControl.spring = magnet.pullForce;
         magnet.transform.rotation = Quaternion.Euler(new Vector3(0,180,0));

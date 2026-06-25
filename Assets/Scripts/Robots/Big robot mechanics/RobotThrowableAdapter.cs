@@ -21,7 +21,7 @@ public class RobotThrowableAdapter : ThrowableObject
         {
             robot.transform.SetParent(null);
             robot.controller.enabled = true;
-            robot.ResetTransform();
+            robot.ResetTransform(false);
 
             Destroy(this.gameObject);
         }
