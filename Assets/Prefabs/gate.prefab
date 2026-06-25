@@ -983,7 +983,6 @@ GameObject:
   - component: {fileID: 7794903076784931824}
   - component: {fileID: 8294366398733964240}
   - component: {fileID: 6172292813922777306}
-  - component: {fileID: 51508516750023340}
   m_Layer: 0
   m_Name: Gate (1)
   m_TagString: Untagged
@@ -1084,28 +1083,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.002264272, y: 0.0759918, z: 0.05016658}
   m_Center: {x: 0.047383133, y: -0.0000010996663, z: 0.023201844}
---- !u!95 &51508516750023340
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2950810237240970210}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18ff636b7205a92408745eb1133bad20, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4037090290149656357
 GameObject:
   m_ObjectHideFlags: 0
