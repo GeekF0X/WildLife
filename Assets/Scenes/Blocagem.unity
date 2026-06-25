@@ -440,6 +440,21 @@ MonoBehaviour:
   - {fileID: 27810570}
   behavior: 0
   selfDestroy: 1
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 27810573}
+        m_TargetAssemblyTypeName: AchievementObjects, Assembly-CSharp
+        m_MethodName: PickUpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &27810573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,82 +1691,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 258021820}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 258021819}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 258021818}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
 --- !u!4 &258021816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
   m_PrefabInstance: {fileID: 258021815}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &258021817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ed44805616898440aa7241fa851fdbe, type: 3}
-  m_PrefabInstance: {fileID: 258021815}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &258021818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258021817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c053ba2b390aa0d44b41eba33bf88b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Items
-  manager: {fileID: 921129759}
-  firstDialog: 2
-  secondDialog: 3
---- !u!114 &258021819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258021817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54443b6383321654ab1ee0a11cf6ba51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerDestroy
-  trackingObjs:
-  - {fileID: 955347302}
-  - {fileID: 357753540}
-  collisionList:
-  - {fileID: 258021820}
-  behavior: 0
-  selfDestroy: 1
---- !u!65 &258021820
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258021817}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.10699997, z: 0.17}
-  m_Center: {x: -0.0000009566991, y: 0.05349998, z: -0.0005814463}
 --- !u!1 &262240584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,6 +5450,21 @@ MonoBehaviour:
   - {fileID: 713315955}
   behavior: 0
   selfDestroy: 1
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 713315963}
+        m_TargetAssemblyTypeName: AchievementObjects, Assembly-CSharp
+        m_MethodName: PickUpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &713315963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12701,6 +12662,21 @@ MonoBehaviour:
   - {fileID: 1289188078}
   behavior: 0
   selfDestroy: 1
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1289188076}
+        m_TargetAssemblyTypeName: AchievementObjects, Assembly-CSharp
+        m_MethodName: PickUpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1289188078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18032,7 +18008,7 @@ PrefabInstance:
       objectReference: {fileID: 1772957789}
     - target: {fileID: 8852157715491226386, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_VersionIndex
-      value: 853
+      value: 859
       objectReference: {fileID: 0}
     - target: {fileID: 9164505580269567511, guid: 09620123495bc2444b2ad730b55ecc8b, type: 3}
       propertyPath: m_LocalPosition.x

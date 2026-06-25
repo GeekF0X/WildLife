@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HitDestroy : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class HitDestroy : MonoBehaviour
     Animator? anim;
     Collider? coll;
     public Fractures? fract;
+    public UnityEvent? OnEffect;
+
     Vector3 initialPosition;
 
     public bool enabledDestroy = true;
@@ -67,6 +70,8 @@ public class HitDestroy : MonoBehaviour
             {
                 if ( hitObj.Contains(collision.gameObject))
                 {
+                    OnEffect?.Invoke();
+
                     coll.enabled = false;
                     fract?.Activate();
                     anim?.SetTrigger("Hit");
@@ -74,6 +79,8 @@ public class HitDestroy : MonoBehaviour
             }
             else
             {
+                OnEffect?.Invoke();
+
                 coll.enabled = false;
                 fract?.Activate();
                 anim?.SetTrigger("Hit");

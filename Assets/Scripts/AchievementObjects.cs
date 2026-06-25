@@ -26,17 +26,29 @@ public class AchievementObjects : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log(this.i + "  " + "pegouI");
-            manager.SaveAchievment(this.i);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log(this.i + "  " + "pegouI");
+    //        manager.SaveAchievment(this.i);
 
-            if (DialogUI.Instance != null)
-            {
-                DialogUI.Instance.Show(firstDialog, secondDialog);
-            }
+    //        if (DialogUI.Instance != null)
+    //        {
+    //            DialogUI.Instance.Show(firstDialog, secondDialog);
+    //        }
+    //    }
+    //}
+
+    public void PickUpDialog()
+    {
+   
+        Debug.Log(this.i + "  " + "pegouI");
+        manager.SaveAchievment(this.i);
+
+        if (DialogUI.Instance != null)
+        {
+            DialogUI.Instance.Show(firstDialog, secondDialog);
         }
     }
 }

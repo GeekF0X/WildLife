@@ -14,6 +14,9 @@ public class TriggerDestroy : MonoBehaviour
     UnityAction<Collider> EnterBehavior = (Collider col) => { return; };
     UnityAction<Collider> ExitBehavior = (Collider col) => { return; };
 
+#nullable enable
+    public UnityEvent? OnEffect;
+
     void Deactivate(Collider collider)
     {
         if (collisionList.Length > 0)
@@ -22,6 +25,8 @@ public class TriggerDestroy : MonoBehaviour
             {
                 if (trackingObjs.Contains(collider.gameObject))
                 {
+                    OnEffect?.Invoke();
+
                     foreach (Collider coll in collisionList)
                     {
                         coll.enabled = false;
@@ -32,6 +37,8 @@ public class TriggerDestroy : MonoBehaviour
             }
             else
             {
+                OnEffect?.Invoke();
+
                 foreach (Collider coll in collisionList)
                     coll.enabled = false;
             }
