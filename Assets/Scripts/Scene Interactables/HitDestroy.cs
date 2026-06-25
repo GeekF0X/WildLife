@@ -11,6 +11,7 @@ public class HitDestroy : MonoBehaviour
     #nullable enable
     Animator? anim;
     Collider? coll;
+    public Fractures? fract;
     Vector3 initialPosition;
 
     public bool enabledDestroy = true;
@@ -67,12 +68,14 @@ public class HitDestroy : MonoBehaviour
                 if ( hitObj.Contains(collision.gameObject))
                 {
                     coll.enabled = false;
+                    fract?.Activate();
                     anim?.SetTrigger("Hit");
                 }
             }
             else
             {
                 coll.enabled = false;
+                fract?.Activate();
                 anim?.SetTrigger("Hit");
             }
         }
