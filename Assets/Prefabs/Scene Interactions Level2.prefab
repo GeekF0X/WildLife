@@ -357,6 +357,9 @@ MonoBehaviour:
   behavior: 1
   hitObj: []
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 1
   selfDestroy: 0
 --- !u!1 &1029887785527928708
@@ -414,6 +417,9 @@ MonoBehaviour:
   - {fileID: 8340402426695030036}
   behavior: 1
   selfDestroy: 0
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &5849108128958578263
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -567,6 +573,9 @@ MonoBehaviour:
   - {fileID: 990882555945525900}
   - {fileID: 0}
   fract: {fileID: 5593487200856696982}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 1
   selfDestroy: 0
 --- !u!1 &1225610571082937962
@@ -2158,6 +2167,9 @@ MonoBehaviour:
   - {fileID: 4798072195210879583}
   behavior: 3
   selfDestroy: 0
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5419393618440270336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,6 +3079,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4427515823620535671}
+  - {fileID: 2148404744792627942}
   m_Father: {fileID: 838020566168873453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2950008828547769608
@@ -4492,7 +4505,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 865
+  m_VersionIndex: 862
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8571,6 +8584,80 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01574391, y: 0.011245454, z: 0.01342446}
   m_Center: {x: -0.00030771055, y: 0.0007251219, z: 0.0016957294}
+--- !u!1001 &1898851938068184333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 808389909284033052}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4258088
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5189702
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53965026
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.069
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.477
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+      propertyPath: m_Name
+      value: Pedra2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+--- !u!4 &2148404744792627942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40280d7a876686244b1a85735eb171b8, type: 3}
+  m_PrefabInstance: {fileID: 1898851938068184333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2062176036656608736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8702,6 +8789,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 6035865827120420639}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 1
   selfDestroy: 1
 --- !u!114 &3288612501082580564
@@ -9161,6 +9251,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &800145508441236343 stripped
@@ -9232,6 +9325,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &1312603858470986228 stripped
@@ -9303,6 +9399,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &1546773495628119056 stripped
@@ -9374,6 +9473,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &1831539215500359678 stripped
@@ -9445,6 +9547,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &2307592140342146945 stripped
@@ -9516,6 +9621,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!4 &2811614669524830239 stripped
@@ -9614,6 +9722,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &3570246897595146731 stripped
@@ -9685,6 +9796,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &3668497873796433947 stripped
@@ -9756,6 +9870,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &4049191851150052714 stripped
@@ -9827,6 +9944,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &4548400378442879420 stripped
@@ -9898,6 +10018,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &5906152636644185636 stripped
@@ -9969,6 +10092,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &6202543260624757728 stripped
@@ -10040,6 +10166,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &6207031324903249971 stripped
@@ -10111,6 +10240,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &6339903414755369028 stripped
@@ -10182,6 +10314,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1 &6373078393718946506 stripped
@@ -10253,6 +10388,9 @@ MonoBehaviour:
   hitObj:
   - {fileID: 0}
   fract: {fileID: 0}
+  OnEffect:
+    m_PersistentCalls:
+      m_Calls: []
   enabledDestroy: 0
   selfDestroy: 1
 --- !u!1001 &3822978955566298752
@@ -10319,6 +10457,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e688a59324b80f8428f6624581906c28, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e688a59324b80f8428f6624581906c28, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b08276a505846f443bd51232f721bc7b, type: 2}
     - target: {fileID: 919132149155446097, guid: e688a59324b80f8428f6624581906c28, type: 3}
       propertyPath: m_Name
       value: BrokenRobot1
@@ -10587,6 +10733,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e688a59324b80f8428f6624581906c28, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e688a59324b80f8428f6624581906c28, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b08276a505846f443bd51232f721bc7b, type: 2}
     - target: {fileID: 919132149155446097, guid: e688a59324b80f8428f6624581906c28, type: 3}
       propertyPath: m_Name
       value: BrokenRobot1
