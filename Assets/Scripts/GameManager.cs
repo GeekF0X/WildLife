@@ -47,12 +47,18 @@ public class GameManager : MonoBehaviour
             fallFailText.SetActive(true);
 
         Time.timeScale = 0f;
+        
+        if (MouseController.Instance != null)
+        MouseController.Instance.UnlockMouse();
     }
 
 
     public void RestartLevel(bool fromStart)
     {
         Time.timeScale = 1f;
+         if (MouseController.Instance != null)
+            MouseController.Instance.LockMouse();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         if (fromStart)
             Global.LoadScene(SceneManager.GetActiveScene().name);
         else
@@ -62,6 +68,9 @@ public class GameManager : MonoBehaviour
     public void QuitToMenu()
     {
         Time.timeScale = 1f;
+        if (MouseController.Instance != null)
+            MouseController.Instance.UnlockMouse();
+            SceneManager.LoadScene(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
