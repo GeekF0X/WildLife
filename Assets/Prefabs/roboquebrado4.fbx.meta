@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: 547dc44c65859f04a9908f2fa639cf67
+guid: 6a0b916a63445c949a0bb2bede690792
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 633793e31dbd5684a9e77d6b8d7e910b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: agua
-    second: {fileID: -876546973899608171, guid: 3ad251bcb393b1c47b8e408d7d980def, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: grama
-    second: {fileID: 2100000, guid: 88c1b26b999f21946938953ced83bbf5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mesaalavanca
-    second: {fileID: 2100000, guid: 981db21bb74ee0a4baebad9c06f83ff1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: portal
-    second: {fileID: 2100000, guid: 7f95dfaea1f3e17428c38f7777ccaf57, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: terreno
-    second: {fileID: 2100000, guid: c12e0c8f46e97c5418d7a94d87463849, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -65,7 +35,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
@@ -86,7 +56,7 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    generateMeshLods: 1
+    generateMeshLods: 0
     meshLodGenerationFlags: 0
     maximumMeshLod: -1
     meshOptimizationFlags: -1
