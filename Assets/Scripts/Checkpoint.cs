@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public GameObject puzzle;
+#nullable enable
+    public GameObject? puzzle;
     public Transform smallPosition, bigPosition;
     public bool condition = true;
 
@@ -18,7 +19,7 @@ public class Checkpoint : MonoBehaviour
 
             manager.checkpointIndex = selfIndex;
             manager.SaveCheckpoint(this);
-            Destroy(GetComponent<Collider>());
+            Destroy(GetComponentInChildren<Collider>());
         }
     }
 

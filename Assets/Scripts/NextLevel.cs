@@ -4,10 +4,10 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     bool hasPlayer = false;
-
+    public GameObject small, big;
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject == small || other.gameObject == big)
         {
             if (hasPlayer)
             {
@@ -21,7 +21,7 @@ public class NextLevel : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject == small || other.gameObject == big)
         {
             hasPlayer = false;
         }

@@ -16,31 +16,36 @@ public class DataManager : MonoBehaviour
         {
             SaveData data = new();
             data.sceneData = new();
-            data.achievDava = new();
-            data.sceneData.level = SceneManager.GetActiveScene().name;
-            data.sceneData.small = new RobotDataAdapter(small);
-            data.sceneData.big = new RobotDataAdapter(big);
-            data.achievDava.achievName = new List<string>();
-            data.achievDava.achievValue = new List<bool>();
+            //data.achievDava = new();
+            //data.sceneData.level = SceneManager.GetActiveScene().name;
+            //data.sceneData.small = new RobotDataAdapter(small);
+            //data.sceneData.big = new RobotDataAdapter(big);
+            //data.achievDava.achievName = new List<string>();
+            //data.achievDava.achievValue = new List<bool>();
             SaveManager.Save(data);
         }
         else
         {
-            checkpointIndex = Global.saveScene.checkpoint;
-            for (int i = 0; i < checkpointIndex; i++)
+            if(Global.saveScene != null)
             {
-                levelCheckpoints[i].gameObject.SetActive(false);
-                levelCheckpoints[i].puzzle.SetActive(false);
-            }
-            if (small)
-            {
-                RobotDataAdapter robot = new(Global.saveScene.small);
-                robot.LoadRobot(ref small);
-            }
-            if (big)
-            {
-                RobotDataAdapter robot = new(Global.saveScene.big);
-                robot.LoadRobot(ref big);
+                if (Global.saveScene.level != SceneManager.GetActiveScene().name) return;
+                checkpointIndex = Global.saveScene.checkpoint;
+                if (small)
+                {
+                    RobotDataAdapter robot = new(Global.saveScene.small);
+                    robot.LoadRobot(ref small);
+                }
+                if (big)
+                {
+                    RobotDataAdapter robot = new(Global.saveScene.big);
+                    robot.LoadRobot(ref big);
+                }
+                for (int i = 0; i < checkpointIndex; i++)
+                {
+                    levelCheckpoints[i].gameObject.SetActive(false);
+                    if(levelCheckpoints[i].puzzle)
+                        levelCheckpoints[i].puzzle?.SetActive(false);
+                }
             }
         }
     }

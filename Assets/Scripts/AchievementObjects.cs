@@ -49,6 +49,8 @@ public class AchievementObjects : MonoBehaviour
         if (DialogUI.Instance != null)
         {
             DialogUI.Instance.Show(firstDialog, secondDialog);
+            MouseController.Instance.UnlockMouse();
+            Time.timeScale = 0;
         }
     }
 }

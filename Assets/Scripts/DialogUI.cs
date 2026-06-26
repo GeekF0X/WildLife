@@ -81,5 +81,7 @@ public class DialogUI : MonoBehaviour
    public void Hide()
    {
      DialogBox.SetActive(false);
+     MouseController.Instance.LockMouse();
+     Time.timeScale = 1;
    }
 }

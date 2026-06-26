@@ -6,7 +6,7 @@ public class Global
 {
     static public SceneData saveScene;
     static public AchievData achievment;
-    public static bool FromStar { get; private set;}
+    public static bool FromStar { get; private set; } = false;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void InitializeOnStartup()
@@ -14,8 +14,9 @@ public class Global
         var data = SaveManager.Load();
         saveScene = data.sceneData;
         achievment = data.achievDava;
-
-        FromStar = true;
+        Debug.Log(JsonUtility.ToJson(saveScene, true));
+        Debug.Log(saveScene.checkpoint);
+        FromStar = false;
     }
 
     public static void LoadScene(string levelName)
