@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class DoorGate : MonoBehaviour
@@ -6,6 +7,8 @@ public class DoorGate : MonoBehaviour
     public Animator doorAnimator;
     public GameObject lever;
     public bool onTrigger = false;
+
+    public UnityEvent ActivationEvent;
 
     void Start()
     {
@@ -21,6 +24,15 @@ public class DoorGate : MonoBehaviour
             blend = Mathf.Clamp(blend + Time.deltaTime * 0.33f, 0, 1);
             doorAnimator.SetFloat("Blend", blend);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == lever)
+        {
+            ActivationEvent.Invoke();
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)

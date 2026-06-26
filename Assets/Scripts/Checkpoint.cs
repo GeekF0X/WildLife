@@ -15,16 +15,19 @@ public class Checkpoint : MonoBehaviour
     {
         if ((other.tag == "Player") && condition)
         {
-            Debug.Log("Passei");
-
-            manager.checkpointIndex = selfIndex;
-            manager.SaveCheckpoint(this);
-            Destroy(GetComponentInChildren<Collider>());
+            GetCheckpoint();
         }
     }
 
     public void SetCondition(bool value)
     {
         condition = value;
+    }
+
+    public void GetCheckpoint()
+    {
+        manager.checkpointIndex = selfIndex;
+        manager.SaveCheckpoint(this);
+        Destroy(GetComponentInChildren<Collider>());
     }
 }
