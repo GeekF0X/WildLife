@@ -187,8 +187,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014224802238328144}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19525461, y: 0.06327124, z: 0.012623795, w: 0.97862816}
-  m_LocalPosition: {x: 0.38776207, y: -0.19345093, z: -1.0036526}
+  m_LocalRotation: {x: -0.19491325, y: 0.061470747, z: 0.012240774, w: 0.97881585}
+  m_LocalPosition: {x: 0.3916607, y: -0.19281006, z: -1.003252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -272,7 +272,7 @@ MonoBehaviour:
     SplineCurvature: 0.171
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: -5.5633607
+    Value: -5.786051
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -282,7 +282,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 4.8110957
+    Value: 4.829023
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -641,7 +641,6 @@ GameObject:
   - component: {fileID: 7765910114578575336}
   - component: {fileID: 1103693334608446767}
   - component: {fileID: 4090111062381220479}
-  - component: {fileID: 4549217145145810958}
   m_Layer: 7
   m_Name: RobotSmall
   m_TagString: Player
@@ -739,27 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RobotAnimations
   animator: {fileID: 8772054560113156995}
---- !u!65 &4549217145145810958
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788086561738391827}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 767
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.73, y: 1.35, z: 0.85}
-  m_Center: {x: 0, y: 0.11, z: 0}
 --- !u!1 &5764972114139174282
 GameObject:
   m_ObjectHideFlags: 0
