@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MouseController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MouseController : MonoBehaviour
     public bool unlockOnFocusLost = true;
 
     public bool IsLocked { get; private set; }
+
+    private readonly HashSet<string> unlockReasons = new HashSet<string>();
 
     private void Awake()
     {
@@ -33,6 +36,8 @@ public class MouseController : MonoBehaviour
 
     public void LockMouse()
     {
+        if (unlockReasons.Count > 0) return;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         IsLocked = true;
@@ -44,21 +49,48 @@ public class MouseController : MonoBehaviour
         Cursor.visible = true;
         IsLocked = false;
     }
+
     public void ToggleMouse()
     {
         if (IsLocked) UnlockMouse();
         else LockMouse();
     }
 
+    public void RequestUnlock(string reason)
+    {
+        unlockReasons.Add(reason);
+        UnlockMouse();
+        Debug.Log($"[MouseController] Mouse liberado por: {reason}. Total razões: {unlockReasons.Count}");
+    }
+
+
+    public void ReleaseUnlock(string reason)
+    {
+        unlockReasons.Remove(reason);
+        Debug.Log($"[MouseController] Razão removida: {reason}. Total restante: {unlockReasons.Count}");
+
+        if (unlockReasons.Count == 0)
+            LockMouse();
+    }
+
+    public void ForceLockMouse()
+    {
+        unlockReasons.Clear();
+        LockMouse();
+    }
+
+
     private void OnApplicationFocus(bool hasFocus)
     {
         if (!unlockOnFocusLost) return;
+
         if (!hasFocus)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else if (IsLocked && (PauseMenu.Instance == null || !PauseMenu.Instance.IsPaused))
+        else if (IsLocked && unlockReasons.Count == 0
+                 && (PauseMenu.Instance == null || !PauseMenu.Instance.IsPaused))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
