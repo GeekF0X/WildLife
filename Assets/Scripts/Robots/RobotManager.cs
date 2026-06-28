@@ -59,4 +59,20 @@ public class RobotManager : MonoBehaviour
     {
         controlledRobot.Aim(context.performed);
     }
+
+    public void OnLevel1(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Global.LoadScene("Blocagem2");
+        }
+    }
+
+    public void OnLevel2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Global.LoadScene("Blocagem");
+        }
+    }
 }

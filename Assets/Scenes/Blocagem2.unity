@@ -2474,19 +2474,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9980951
+      value: 0.9980939
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0196788
+      value: 0.01967879
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.058460966
+      value: 0.058481473
       objectReference: {fileID: 0}
     - target: {fileID: 505745369446651466, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0011526373
+      value: -0.0011530428
       objectReference: {fileID: 0}
     - target: {fileID: 1320661634641792502, guid: fb137f31ce2049e419528a95ee6f97e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3308,7 +3308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159459759}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19469051, y: 0.07724657, z: 0.015382236, w: 0.9776973}
+  m_LocalRotation: {x: -0.19491296, y: 0.06149201, z: 0.012245006, w: 0.9788145}
   m_LocalPosition: {x: -52.028336, y: -6.91281, z: -17.423252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3365,19 +3365,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9776973
+      value: 0.9788145
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.19469048
+      value: -0.19491294
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.077246554
+      value: 0.061492007
       objectReference: {fileID: 0}
     - target: {fileID: 6166373517562674629, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015382234
+      value: 0.012245005
       objectReference: {fileID: 0}
     - target: {fileID: 7765910114578575336, guid: 167e9ea248cb94944a9dba38316f877d, type: 3}
       propertyPath: ren
@@ -4500,6 +4500,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4313d0b8-b1f4-4c7b-a15c-a2b15951c4c3
     m_ActionName: 'Player/Aim[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1458631504}
+        m_TargetAssemblyTypeName: RobotManager, Assembly-CSharp
+        m_MethodName: OnLevel1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 77bc3e96-6f84-4dd4-9f28-f1695141fc00
+    m_ActionName: 'Player/Level1[/Keyboard/f1]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1458631504}
+        m_TargetAssemblyTypeName: RobotManager, Assembly-CSharp
+        m_MethodName: OnLevel2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 46ab9816-75bd-4975-945f-382085b9d036
+    m_ActionName: 'Player/Level2[/Keyboard/f2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 718e60d9-5f62-407d-875c-8e21ba2ed037
+    m_ActionName: 'Player/NoClip[/Keyboard/f3]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 

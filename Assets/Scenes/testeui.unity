@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4671318434934662429, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 877e807b07c8e4541a61311318efe1bf, type: 3}
     - target: {fileID: 4748956526741955475, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1930,6 +1934,10 @@ MonoBehaviour:
   pausePanel: {fileID: 1909973826}
   controlesPanel: {fileID: 0}
   opcoesPanel: {fileID: 0}
+  creditosPanel: {fileID: 0}
+  coletaveisPanel: {fileID: 0}
+  dataManager: {fileID: 0}
+  mainMenuSceneIndex: 0
   pauseKey: 27
   blockOnGameOver: 1
 --- !u!1660057539 &9223372036854775807
