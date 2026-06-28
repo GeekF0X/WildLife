@@ -11,7 +11,7 @@ public class NextLevel : MonoBehaviour
         {
             if (hasPlayer)
             {
-                Global.LoadScene("Blocagem3");
+                Global.LoadScene("StoryEnding");
             }
             else
                 hasPlayer = true;
