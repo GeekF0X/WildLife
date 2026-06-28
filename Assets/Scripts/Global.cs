@@ -14,8 +14,6 @@ public class Global
         var data = SaveManager.Load();
         saveScene = data.sceneData;
         achievment = data.achievDava;
-        Debug.Log(JsonUtility.ToJson(saveScene, true));
-        Debug.Log(saveScene.checkpoint);
         FromStar = false;
     }
 
