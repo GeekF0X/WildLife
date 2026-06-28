@@ -198,7 +198,7 @@ public class PauseMenu : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayUIClick();
 
-        SceneManager.LoadScene(mainMenuSceneIndex);
+        SceneManager.LoadScene("testeui");
         Debug.Log("[PauseMenu] Indo para Menu Principal...");
     }
 

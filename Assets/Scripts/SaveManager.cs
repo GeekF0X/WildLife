@@ -26,8 +26,12 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            File.WriteAllText(path, "");
-            return null;
+            var newData = new SaveData();
+            newData.achievDava = new AchievData();
+            newData.achievDava.achievName = new();
+            newData.achievDava.achievValue = new();
+            Save(newData);
+            return newData;
         }
     }
 }

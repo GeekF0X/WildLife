@@ -16,10 +16,10 @@ public class DataManager : MonoBehaviour
         {
             SaveData data = new();
             data.sceneData = new();
-            //data.achievDava = new();
-            //data.sceneData.level = SceneManager.GetActiveScene().name;
-            //data.sceneData.small = new RobotDataAdapter(small);
-            //data.sceneData.big = new RobotDataAdapter(big);
+            data.achievDava = Global.achievment;
+            data.sceneData.level = SceneManager.GetActiveScene().name;
+            data.sceneData.small = new RobotDataAdapter(small);
+            data.sceneData.big = new RobotDataAdapter(big);
             //data.achievDava.achievName = new List<string>();
             //data.achievDava.achievValue = new List<bool>();
             SaveManager.Save(data);
@@ -33,12 +33,14 @@ public class DataManager : MonoBehaviour
                 if (small)
                 {
                     RobotDataAdapter robot = new(Global.saveScene.small);
-                    robot.LoadRobot(ref small);
+                    if(robot.position != Vector3.zero)
+                        robot.LoadRobot(ref small);
                 }
                 if (big)
                 {
                     RobotDataAdapter robot = new(Global.saveScene.big);
-                    robot.LoadRobot(ref big);
+                    if (robot.position != Vector3.zero)
+                        robot.LoadRobot(ref big);
                 }
                 for (int i = 0; i < checkpointIndex; i++)
                 {
