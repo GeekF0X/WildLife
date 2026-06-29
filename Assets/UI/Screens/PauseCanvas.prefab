@@ -1681,6 +1681,7 @@ MonoBehaviour:
   opcoesPanel: {fileID: 1197697580236618522}
   creditosPanel: {fileID: 0}
   coletaveisPanel: {fileID: 0}
+  background: {fileID: 9051673549668385296}
   dataManager: {fileID: 0}
   mainMenuSceneIndex: 0
   pauseKey: 27

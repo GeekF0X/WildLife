@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject opcoesPanel;
     public GameObject creditosPanel;
     public GameObject coletaveisPanel;
+    public GameObject background;
 
     [Header("Sistemas")]
     [Tooltip("Referência para o DataManager (que tem o checkpoint system)")]
@@ -65,12 +66,14 @@ public class PauseMenu : MonoBehaviour
         if (opcoesPanel != null) opcoesPanel.SetActive(false);
         if (creditosPanel != null) creditosPanel.SetActive(false);
         if (coletaveisPanel != null) coletaveisPanel.SetActive(false);
+        if (background != null) background.SetActive(false);
     }
 
 
     public void Pause()
     {
         IsPaused = true;
+        if (background != null) background.SetActive(true);
         if (pausePanel != null) pausePanel.SetActive(true);
         Time.timeScale = 0f;
 

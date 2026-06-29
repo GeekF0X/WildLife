@@ -56,9 +56,8 @@ public class GameManager : MonoBehaviour
     public void RestartLevel(bool fromStart)
     {
         Time.timeScale = 1f;
-         if (MouseController.Instance != null)
+        if (MouseController.Instance != null)
             MouseController.Instance.LockMouse();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         if (fromStart)
             Global.LoadScene(SceneManager.GetActiveScene().name);
         else
