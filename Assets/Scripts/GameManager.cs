@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         if (MouseController.Instance != null)
             MouseController.Instance.LockMouse();
         if (fromStart)
-            Global.LoadScene(SceneManager.GetActiveScene().name);
+            Global.LoadScene(SceneManager.GetSceneAt(0).name);
         else
             Global.LoadCheckpoint();
     }
