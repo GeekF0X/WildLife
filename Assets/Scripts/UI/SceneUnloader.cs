@@ -25,11 +25,12 @@ public class SceneUnloader : MonoBehaviour
 
         yield return null;
 
+        if (previousScene.name == currentScene)
+            currentScene = SceneManager.GetSceneAt(1).name;
         AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
         while (unload != null && !unload.isDone)
             yield return null;
 
-        Time.timeScale = 0f;
 
         Debug.Log($"[SceneUnloader] Scene '{currentScene}' descarregada.");
     }

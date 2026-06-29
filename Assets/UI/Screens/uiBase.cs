@@ -1,5 +1,7 @@
 using System;
-using Unity.VisualScripting;
+using Unity.VectorGraphics;
+using System.Collections;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +11,16 @@ public class uiBase : MonoBehaviour
 
     public void Creditos()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Creditos");
+        StartCoroutine(SwitchSceneRoutine());
+    }
+
+    private IEnumerator SwitchSceneRoutine()
+    {
+        SceneManager.LoadScene("Creditos", LoadSceneMode.Additive);
+        yield return null;
+
+        var newScene = SceneManager.GetSceneByName("Creditos");
+        SceneManager.SetActiveScene(newScene);
     }
 
     public void Play()

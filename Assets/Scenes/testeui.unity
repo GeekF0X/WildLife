@@ -3267,6 +3267,7 @@ MonoBehaviour:
   opcoesPanel: {fileID: 0}
   creditosPanel: {fileID: 0}
   coletaveisPanel: {fileID: 0}
+  background: {fileID: 0}
   dataManager: {fileID: 0}
   mainMenuSceneIndex: 0
   pauseKey: 27
