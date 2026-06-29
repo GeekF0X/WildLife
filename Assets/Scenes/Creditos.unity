@@ -1572,7 +1572,7 @@ GameObject:
   - component: {fileID: 2095253573}
   - component: {fileID: 2095253576}
   m_Layer: 5
-  m_Name: Voltar
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 32da7acd80c779c43b395e01ea28ebd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbb6b7cccc928d244ab7a1811482f249, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
