@@ -17,4 +17,9 @@ public class Buttons : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Blocagem");
     }
+
+    public void Menu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("testeui");
+    }
 }
