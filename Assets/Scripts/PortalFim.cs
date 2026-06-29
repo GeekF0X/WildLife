@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PortalFim : MonoBehaviour
 {
-    private void OnDestroy()
+    public void NextLevel()
     {
         SceneManager.LoadScene("StoryRobot2");
     }

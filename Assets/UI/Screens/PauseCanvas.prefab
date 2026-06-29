@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 8292248742533335236}
   - component: {fileID: 5000147028846900823}
   - component: {fileID: 6778592472435156585}
+  - component: {fileID: 5888849400106830992}
   m_Layer: 5
   m_Name: OpcoesPanel
   m_TagString: Untagged
@@ -388,6 +389,21 @@ MonoBehaviour:
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!114 &6778592472435156585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197697580236618522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b64fd1961af84439351e362161aa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSettings
+  masterSlider: {fileID: 8005977992376053803}
+  musicSlider: {fileID: 1580779918307146502}
+  sfxSlider: {fileID: 3967132843879264085}
+--- !u!114 &5888849400106830992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,7 +619,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 29850499346994662}
+        m_TargetAssemblyTypeName: MixerControler, Assembly-CSharp
+        m_MethodName: ChangeEffectsVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &240821045135416188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +667,7 @@ GameObject:
   - component: {fileID: 1530008578446298848}
   - component: {fileID: 679280446837771233}
   - component: {fileID: 3055662569194849668}
+  - component: {fileID: 5770740541689867187}
   m_Layer: 5
   m_Name: Btn_Sair
   m_TagString: Untagged
@@ -807,6 +836,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   playHoverSound: 1
   playClickSound: 1
+--- !u!114 &5770740541689867187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801247731667793436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54bb66621f03c4c85360ee3b591e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
+  playHoverSound: 1
+  playClickSound: 1
 --- !u!1 &2871992986218577912
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +960,7 @@ GameObject:
   - component: {fileID: 7996471236437702672}
   - component: {fileID: 4193811405352906537}
   - component: {fileID: 181071000410260177}
+  - component: {fileID: 7368798764805864766}
   m_Layer: 5
   m_Name: Btn_MenuPrincipal
   m_TagString: Untagged
@@ -1085,6 +1129,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   playHoverSound: 1
   playClickSound: 1
+--- !u!114 &7368798764805864766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112310668020120231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54bb66621f03c4c85360ee3b591e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
+  playHoverSound: 1
+  playClickSound: 1
 --- !u!1 &3215680036663320172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1269,7 @@ GameObject:
   - component: {fileID: 3564445559868799866}
   - component: {fileID: 7248074053615930822}
   - component: {fileID: 3796973560819273356}
+  - component: {fileID: 5839902691737550094}
   m_Layer: 5
   m_Name: Btn_Checkpoint
   m_TagString: Untagged
@@ -1366,6 +1425,20 @@ MonoBehaviour:
   playHoverSound: 1
   playClickSound: 1
 --- !u!114 &3796973560819273356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658153283299141019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54bb66621f03c4c85360ee3b591e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
+  playHoverSound: 1
+  playClickSound: 1
+--- !u!114 &5839902691737550094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1633,6 +1706,7 @@ GameObject:
   - component: {fileID: 6145903745700529511}
   - component: {fileID: 1618715367479542016}
   - component: {fileID: 7478300317526810919}
+  - component: {fileID: 29850499346994662}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -1747,6 +1821,22 @@ MonoBehaviour:
   mainMenuSceneIndex: 0
   pauseKey: 27
   blockOnGameOver: 1
+--- !u!114 &29850499346994662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4495837441900078155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25131bb0d5e61fe438878339eb3d7bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MixerControler
+  mixer: {fileID: 24100000, guid: 84494b7cd9d261e4899fc4059946aa06, type: 2}
+  sldMusic: {fileID: 1580779918307146502}
+  sldEffects: {fileID: 3967132843879264085}
+  sldGeral: {fileID: 8005977992376053803}
 --- !u!1 &4543395189895980088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1924,7 @@ GameObject:
   - component: {fileID: 6358293489091199842}
   - component: {fileID: 7474645341353126152}
   - component: {fileID: 6412214116205126765}
-  - component: {fileID: 8841717055428929216}
+  - component: {fileID: 780992889415708259}
   m_Layer: 5
   m_Name: Volume_Music
   m_TagString: Untagged
@@ -1916,7 +2006,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &8841717055428929216
+--- !u!114 &780992889415708259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1945,8 +2035,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2098,7 +2188,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 29850499346994662}
+        m_TargetAssemblyTypeName: MixerControler, Assembly-CSharp
+        m_MethodName: ChangeGeralVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8017914284098684374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,7 +2386,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 29850499346994662}
+        m_TargetAssemblyTypeName: MixerControler, Assembly-CSharp
+        m_MethodName: ChangeMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760774669437575959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,6 +2434,7 @@ GameObject:
   - component: {fileID: 4537714850503375557}
   - component: {fileID: 6294148785206566306}
   - component: {fileID: 7813335680623398594}
+  - component: {fileID: 8282247125405009276}
   m_Layer: 5
   m_Name: Btn_Configs
   m_TagString: Untagged
@@ -2475,6 +2590,20 @@ MonoBehaviour:
   playHoverSound: 1
   playClickSound: 1
 --- !u!114 &7813335680623398594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997309969525739217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54bb66621f03c4c85360ee3b591e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
+  playHoverSound: 1
+  playClickSound: 1
+--- !u!114 &8282247125405009276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2731,6 +2860,7 @@ GameObject:
   - component: {fileID: 1518682263553958358}
   - component: {fileID: 8979674739200157943}
   - component: {fileID: 7388450848604436010}
+  - component: {fileID: 2620473798296373142}
   m_Layer: 5
   m_Name: Btn_Continuar
   m_TagString: Untagged
@@ -2899,6 +3029,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
   playHoverSound: 1
   playClickSound: 1
+--- !u!114 &2620473798296373142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554340238412326167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54bb66621f03c4c85360ee3b591e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSFX
+  playHoverSound: 1
+  playClickSound: 1
 --- !u!1 &7889175571921494337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +3055,7 @@ GameObject:
   - component: {fileID: 3515230261762818045}
   - component: {fileID: 9150668871290049978}
   - component: {fileID: 6814290672012909051}
-  - component: {fileID: 4653814149262974665}
+  - component: {fileID: 6090222371421490717}
   m_Layer: 5
   m_Name: Volume_SFX
   m_TagString: Untagged
@@ -2993,7 +3137,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4653814149262974665
+--- !u!114 &6090222371421490717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3022,8 +3166,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3353,7 +3497,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: -79.05834}
-  m_SizeDelta: {x: 213.38, y: 38.116688}
+  m_SizeDelta: {x: 297.54, y: 38.116688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2180491402245317897
 CanvasRenderer:
@@ -3383,10 +3527,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "OP\xC7\xD5ES"
+  m_text: "Configura\xE7\xF5es"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3542,7 +3686,7 @@ GameObject:
   - component: {fileID: 7591508006345161430}
   - component: {fileID: 4224775365986218472}
   - component: {fileID: 8912374650920198703}
-  - component: {fileID: 8752639926321076268}
+  - component: {fileID: 5406511562693275775}
   m_Layer: 5
   m_Name: Volume_Master
   m_TagString: Untagged
@@ -3624,7 +3768,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &8752639926321076268
+--- !u!114 &5406511562693275775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3653,8 +3797,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
