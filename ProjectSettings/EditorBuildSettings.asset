@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryRobot1.unity
     guid: d8f197c0f376e264f9a18e4081279735
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StoryRobot2.unity
     guid: 3ee8b8048e4455b40974fde2a1f4f7df
   - enabled: 1
