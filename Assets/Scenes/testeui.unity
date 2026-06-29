@@ -1404,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 877e807b07c8e4541a61311318efe1bf, type: 3}
+    - target: {fileID: 4748720248765040766, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Voltar
+      objectReference: {fileID: 0}
     - target: {fileID: 4748956526741955475, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1616,6 +1620,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5764706
       objectReference: {fileID: 0}
+    - target: {fileID: 7013719009374188009, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sair
+      objectReference: {fileID: 0}
     - target: {fileID: 7486277096860488814, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1635,6 +1643,10 @@ PrefabInstance:
     - target: {fileID: 8799594026713268440, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 8799594026713268440, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.38599396
       objectReference: {fileID: 0}
     - target: {fileID: 8900009855929590972, guid: 90a49bbe5ea2a5d428fe4dbcd8013085, type: 3}
       propertyPath: m_AnchorMax.x
