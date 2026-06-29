@@ -14,8 +14,6 @@ public class AchievementObjects : MonoBehaviour
     private void Start()
     {
         data = Global.achievment;
-        Debug.Log(data);
-        Debug.Log(data.achievName);
         if (data.achievName.Contains(this.gameObject.name))
         {
             this.i = data.achievName.IndexOf(this.gameObject.name);
