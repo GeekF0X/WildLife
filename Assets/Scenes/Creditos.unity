@@ -330,7 +330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pr\xF3ximo"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -960,10 +960,10 @@ RectTransform:
   - {fileID: 450929332}
   m_Father: {fileID: 1761812865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 417, y: -232}
-  m_SizeDelta: {x: 250, y: 100}
+  m_AnchorMin: {x: 0.7203066, y: 0.08167786}
+  m_AnchorMax: {x: 0.91338325, y: 0.21518792}
+  m_AnchoredPosition: {x: -1, y: 2.130005}
+  m_SizeDelta: {x: -1.555603, y: 0.7427063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245020639
 MonoBehaviour:
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d1bc4a66e734a4488a62fb35d09bb00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7f302904f904274aaac0b9eff2e1cca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
